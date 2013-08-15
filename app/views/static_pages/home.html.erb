@@ -1,0 +1,22 @@
+<% provide(:title, 'Michele Gozzi - Portfolio') %>
+
+<h1>Michele Gozzi's - Portfolio</h1>
+
+<% include_style 'jqueryplugins/colorbox/colorbox.css' %>
+<% include_javascript 'jqueryplugins/colorbox/jquery.colorbox-min.js' %>
+<% include_javascript 'static_pages/index.js' %>
+
+<div class="row-fluid">
+  <div class="offset2 span8">
+    <ul class="nav nav-tabs" id="pTab">
+      <% @sectors.each do |sector| %>
+        <li><a href="#<%= sector.description.downcase.tr(" ","_") %>"><%= sector.description.titleize %></a></li>
+      <% end %>
+    </ul>
+    <div class="tab-content">
+      <% @sectors.each do |sector| %>
+        <%= render 'tab', object: sector %>
+      <% end %>
+    </div>
+  </div>
+</div>

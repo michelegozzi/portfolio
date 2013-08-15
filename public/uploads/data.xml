@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<projects>
+  <!-- FINANCIAL -->
+  <project>
+    <sector_description>Financial</sector_description>
+    <display_name>Proquote Web</display_name>
+    <description>Proquote Web provides market data to access a wealth of information relating to the financial markets through a web based application.</description>
+    <url>http://www.proquote.com/</url>
+    <resources>
+      <resource>
+        <description>Proquote Web 00</description>
+        <url>proquoteweb/proquote00.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 01</description>
+        <url>proquoteweb/proquote01.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 02</description>
+        <url>proquoteweb/proquote02.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 03</description>
+        <url>proquoteweb/proquote03.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 04</description>
+        <url>proquoteweb/proquote04.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 05</description>
+        <url>proquoteweb/proquote05.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 06</description>
+        <url>proquoteweb/proquote06.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Proquote Web 07</description>
+        <url>proquoteweb/proquote07.png</url>
+        <mime></mime>
+      </resource>
+    </resources>
+  </project>
+  <project>
+    <sector_description>Financial</sector_description>
+    <display_name>Quotes Push Infrastructure</display_name>
+    <description>Three-tier infrastructure that provides a realtime market data stream. This infrastructure is highly scalable at all levels (FE/ME/BE) and it works in HA.</description>
+    <url>http://www.proquote.com/</url>
+    <resources>
+    </resources>
+  </project>
+  <project>
+    <sector_description>Financial</sector_description>
+    <display_name>Infrastructure Monitoring System</display_name>
+    <description>Setup and configuration of an infrastructure monitoring system based on Nagios (infrastructure, services and data)</description>
+    <url>http://www.proquote.com/</url>
+    <resources>
+    </resources>
+  </project>
+  <!-- HEALTH CARE -->
+  <project>
+    <sector_description>Health Care</sector_description>
+    <display_name>Arianna - InfoClin</display_name>
+    <description>InfoClin Web is a CMS health care application. This application is highly configurable and lets the final user to customize the structure and the contents of the the clinical records.</description>
+    <url>http://www.dedalus.eu/</url>
+    <resources>
+    </resources>
+  </project>
+  <project>
+    <sector_description>Health Care</sector_description>
+    <display_name>Arianna - Drug Therapy</display_name>
+    <description>This application suite is composed of a web application (drug prescription), a PDA application (drug administration), web services (external drug prescription and data exchange).</description>
+    <url>http://www.dedalus.eu/</url>
+    <resources>
+    </resources>
+  </project>
+  <project>
+    <sector_description>Health Care</sector_description>
+    <display_name>Arianna - DSA</display_name>
+    <description>Arianna - Day Service Access is a web application used in programming and scheduling the daily medical examination or course of therapy.</description>
+    <url>http://www.dedalus.eu/</url>
+    <resources>
+    </resources>
+  </project>
+  <!-- OTHERS -->
+  <project>
+    <sector_description>Others</sector_description>
+    <display_name>Fit-Tracker</display_name>
+    <description>Fit-Tracker is a web application born with the main purpose to track the users’s fitness workouts and calorie consumption.</description>
+    <url>http://fit-tracker.herokuapp.com/</url>
+    <resources>
+      <resource>
+        <description>Fit-Tracker 01</description>
+        <url>fittracker/fittracker01.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Fit-Tracker 02</description>
+        <url>fittracker/fittracker02.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Fit-Tracker 03</description>
+        <url>fittracker/fittracker03.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Fit-Tracker 04</description>
+        <url>fittracker/fittracker04.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Fit-Tracker 05</description>
+        <url>fittracker/fittracker05.png</url>
+        <mime></mime>
+      </resource>
+      <resource>
+        <description>Fit-Tracker 06</description>
+        <url>fittracker/fittracker06.png</url>
+        <mime></mime>
+      </resource>
+    </resources>
+  </project>
+
+  <project>
+    <sector_description>Others</sector_description>
+    <display_name>Crossin' Me</display_name>
+    <description>Crossin' Me is an upcoming social network where the users are identified by the own car's plate.&lt;br&gt;The web application is .Net MVC 4 based.&lt;br&gt;STATUS: work in progress</description>
+    <url></url>
+    <resources>
+      <resource>
+        <description>Crossin' Me</description>
+        <url>crossingme/crossingme01.jpg</url>
+        <mime></mime>
+      </resource>
+    </resources>
+  </project>
+
+  <project>
+    <sector_description>Others</sector_description>
+    <display_name>Portfolio</display_name>
+    <description>This app!!!</description>
+    <url></url>
+    <resources>
+    </resources>
+  </project>
+
+
+</projects>

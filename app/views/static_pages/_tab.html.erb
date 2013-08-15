@@ -1,0 +1,42 @@
+<div class="tab-pane active" id="<%= object.description.downcase.tr(" ","_") %>">
+
+  <% object.projects.each do |project| %>
+    <section>
+    <h2><%= project.name.upcase %></h2>
+    <div class="row-fluid">
+
+      <div class="span4">
+        <h4>Resources:</h4>
+        <% if project.resources.any? %>
+        <ul>
+          <% project.resources.each do |r| %>
+
+            <li>
+              <%= link_to r.description.capitalize, image_path(r.url), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+            </li>
+          <% end %>
+        </ul>
+        <% else %>
+          <span class="label label-warning">No resources available</span>
+        <% end %>
+      </div>
+
+      <div class="span8">
+        <h4>Description:</h4>
+        <div class="bs-docs">
+          <p>
+            <%= project.description.html_safe %>
+          </p>
+          <% if !project.url.nil? && !project.url.empty?  %>
+          <p>
+            Url: <%= link_to project.name.titleize, project.url, :target => "_blank" %>
+          </p>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+  <% end %>
+</div>
