@@ -1,0 +1,29 @@
+<% provide(:title, 'Michele Gozzi - Portfolio') %>
+
+<h1>Michele Gozzi's - Portfolio</h1>
+
+<% include_style 'jqueryplugins/colorbox/colorbox.css' %>
+<% include_javascript 'jqueryplugins/colorbox/jquery.colorbox-min.js' %>
+<% include_javascript 'static_pages/index.js' %>
+
+<div class="row-fluid">
+  <div class="offset2 span8">
+    <ul class="nav nav-tabs" id="pTab">
+      <li class="active"><a href="#proquoteweb">Proquote Web</a></li>
+      <li><a href="#fittracker">Fit-Tracker</a></li>
+      <li><a href="#crossingme">Crossin' Me</a></li>
+      <li><a href="#infoclin">InfoClin</a></li>
+      <li><a href="#drugstherapy">Drugs Therapy</a></li>
+      <li><a href="#dsa">DSA</a></li>
+      
+    </ul>
+    <div class="tab-content">
+      <%= render 'proquoteweb' %>
+      <%= render 'fittracker' %>
+      <%= render 'crossingme' %>
+      <%= render 'infoclin' %>
+      <%= render 'drugstherapy' %>
+      <%= render 'dsa' %>
+    </div>
+  </div>
+</div>

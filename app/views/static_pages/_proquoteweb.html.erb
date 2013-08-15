@@ -1,0 +1,25 @@
+<div class="tab-pane active" id="proquoteweb">
+  <div class="row-fluid">
+
+    <div class="span4">
+      <ul>
+        <% (0..7).each do |i| %>
+
+          <li>
+            <%= link_to "Proquote Web 0#{i}", image_path("proquoteweb/proquote0#{i}.png"), :class => "lightbox", :rel => "proquoteweb" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="span8 bs-docs">
+      <p>
+        Proquote Web provides market data to access a wealth of information relating to the financial markets through a web based application.
+      </p>
+      <p>
+        Url: <%= link_to "Proquote Home Page", 'http://www.proquote.com/' %>
+      </p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="tab-pane" id="drugstherapy">
+  <div class="row-fluid">
+
+    <div class="span9">
+      <ul>
+        <% (0..1).each do |i| %>
+
+          <li>
+            <%= link_to "Drugs Therapy #{i}", image_path("drugstherapy/drugstherapy#{i}.png"), :class => "lightbox", :rel => "drugstherapy" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
