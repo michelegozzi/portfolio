@@ -1,6 +1,6 @@
 <div class="tab-pane active" id="<%= object.description.downcase.tr(" ","_") %>">
 
-  <% object.projects.each do |project| %>
+  <% object.projects.order("id asc").each do |project| %>
     <section>
     <h2><%= project.name.upcase %></h2>
     <div class="row-fluid">
@@ -9,7 +9,7 @@
         <h4>Resources:</h4>
         <% if project.resources.any? %>
         <ul>
-          <% project.resources.each do |r| %>
+          <% project.resources.order("id asc").each do |r| %>
 
             <li>
               <%= link_to r.description.capitalize, image_path(r.url), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>

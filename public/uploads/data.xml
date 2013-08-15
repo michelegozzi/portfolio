@@ -150,6 +150,11 @@
     <description>This app!!!</description>
     <url></url>
     <resources>
+      <resource>
+        <description>Crossin' Me</description>
+        <url>crossingme/crossingme01.jpg</url>
+        <mime></mime>
+      </resource>
     </resources>
   </project>
 

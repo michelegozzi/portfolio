@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @sectors = Sector.all
+    @sectors = Sector.order("id asc").all
   end
 end
