@@ -1,0 +1,32 @@
+<% include_javascript 'sectors/sectors_table.js' %>
+
+<table id="sectorsTable" class="table table-bordered table-hover sortable">
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th><%= sortable "description", "Name" %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sectors.each do |sector| %>
+
+    <tr>
+      <td class="icon clickable">
+        <i class="<%= sector.icon_class %> vertical-aligned-btn-content"></i>
+      </td>
+      <td class="description clickable">
+        <%= sector.description %>
+      </td>
+      <td>
+        <%= link_to "Delete", sector_path(sector), method: :delete, data: { confirm: "You sure?" } %>
+      </td>
+      
+      <input type="hidden" name="id" value="<%= sector.id %>" />
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @foods %>

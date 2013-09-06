@@ -1,0 +1,25 @@
+<% provide(:title, "Sector Manager") %>
+<h1>Sector Manager</h1>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "New", new_sector_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <div class="row-fluid">
+      <div class="span12">
+        <% if @sectors.any? %>
+          <h3>Sectors (<%= @sectors.count %>)</h3>
+          <%= render "sectors_table" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

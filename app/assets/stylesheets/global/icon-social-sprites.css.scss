@@ -1,0 +1,30 @@
+/* icons */
+[class^="icon-social-"], [class*=" icon-social-"] {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	*margin-right: .3em;
+	line-height: 24px;
+	vertical-align: text-top;
+	background-image: url(icon-social-sprites.png);
+	background-position: 24px 24px;
+	background-repeat: no-repeat;
+}
+[class^="icon-social-"]:last-child,
+[class*=" icon-social-"]:last-child {
+	*margin-left: 0;
+}
+
+.icon-social-googleplus{background-position: 0 0;}
+.icon-social-yahoo{background-position: -30px 0;}
+.icon-social-github{background-position: -60px 0;}
+.icon-social-twitter{background-position: -90px 0;}
+.icon-social-facebook{background-position: -120px 0;}
+.icon-social-skype{background-position: -150px 0;}
+.icon-social-e-mail{background-position: -180px 0;}
+.icon-social-myspace{background-position: -210px 0;}
+.icon-social-linked_in{background-position: -240px 0;}
+.icon-social-wordpress{background-position: -270px 0;}
+.icon-social-blogger{background-position: -300px 0;}
+
+

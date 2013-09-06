@@ -224,3 +224,8 @@ input {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
+
+.vertical-aligned-btn-content {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}

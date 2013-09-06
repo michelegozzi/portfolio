@@ -1,0 +1,88 @@
+
+/* icons */
+[class^="iconim-"], [class*=" iconim-"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  *margin-right: .3em;
+  line-height: 24px;
+  vertical-align: text-top;
+  background-image: url(icon-imagemagick-sprites.png);
+  background-position: 24px 24px;
+  background-repeat: no-repeat;
+}
+[class^="iconim-"]:last-child,
+[class*=" iconim-"]:last-child {
+  *margin-left: 0;
+}
+
+.iconim-white,
+.nav-pills > .active > a > [class^="iconim-"],
+.nav-pills > .active > a > [class*=" iconim-"],
+.nav-list > .active > a > [class^="iconim-"],
+.nav-list > .active > a > [class*=" iconim-"],
+.navbar-inverse .nav > .active > a > [class^="iconim-"],
+.navbar-inverse .nav > .active > a > [class*=" iconim-"],
+.dropdown-menu > li > a:hover > [class^="iconim-"],
+.dropdown-menu > li > a:focus > [class^="iconim-"],
+.dropdown-menu > li > a:hover > [class*=" iconim-"],
+.dropdown-menu > li > a:focus > [class*=" iconim-"],
+.dropdown-menu > .active > a > [class^="iconim-"],
+.dropdown-menu > .active > a > [class*=" iconim-"],
+.dropdown-submenu:hover > a > [class^="iconim-"],
+.dropdown-submenu:focus > a > [class^="iconim-"],
+.dropdown-submenu:hover > a > [class*=" iconim-"],
+.dropdown-submenu:focus > a > [class*=" iconim-"] {
+  background-image: url(icon-imagemagick-sprites-white.png);
+}
+
+.iconim-pinterest{background-position: 0px 0px;}
+.iconim-dropbox{background-position: -24px 0px;}
+.iconim-plus{background-position: -48px 0px;}
+.iconim-jolicloud{background-position: -72px 0px;}
+.iconim-yahoo{background-position: -96px 0px;}
+.iconim-blogger{background-position: -120px 0px;}
+.iconim-picasa{background-position: -144px 0px;}
+.iconim-amazon{background-position: -168px 0px;}
+.iconim-tumblr{background-position: -192px 0px;}
+.iconim-wordpress{background-position: -216px 0px;}
+.iconim-instapaper{background-position: -240px 0px;}
+.iconim-evernote{background-position: -264px 0px;}
+.iconim-xing{background-position: -288px 0px;}
+.iconim-zootool{background-position: -312px 0px;}
+.iconim-dribbble{background-position: -336px 0px;}
+.iconim-deviantart{background-position: -360px 0px;}
+.iconim-later{background-position: -384px 0px;}
+.iconim-in{background-position: -408px 0px;}
+.iconim-forrst{background-position: -432px 0px;}
+.iconim-pinboard{background-position: -456px 0px;}
+.iconim-behance{background-position: -480px 0px;}
+.iconim-github{background-position: -504px 0px;}
+.iconim-youtube{background-position: -528px 0px;}
+.iconim-skitch{background-position: -552px 0px;}
+.iconim-4square{background-position: -576px 0px;}
+.iconim-quora{background-position: -600px 0px;}
+.iconim-badoo{background-position: -624px 0px;}
+.iconim-spotify{background-position: -648px 0px;}
+.iconim-stumbleupon{background-position: -672px 0px;}
+.iconim-readability{background-position: -696px 0px;}
+.iconim-facebook{background-position: -720px 0px;}
+.iconim-twitter{background-position: -744px 0px;}
+.iconim-instagram{background-position: -768px 0px;}
+.iconim-spaces{background-position: -792px 0px;}
+.iconim-vimeo{background-position: -816px 0px;}
+.iconim-flickr{background-position: -840px 0px;}
+.iconim-fm{background-position: -864px 0px;}
+.iconim-rss{background-position: -888px 0px;}
+.iconim-skype{background-position: -912px 0px;}
+.iconim-e-mail{background-position: -936px 0px;}
+.iconim-vine{background-position: -960px 0px;}
+.iconim-myspace{background-position: -984px 0px;}
+.iconim-goodreads{background-position: -1008px 0px;}
+.iconim-apple{background-position: -1032px 0px;}
+.iconim-windows{background-position: -1056px 0px;}
+.iconim-yelp{background-position: -1080px 0px;}
+.iconim-playstation{background-position: -1104px 0px;}
+.iconim-xbox{background-position: -1128px 0px;}
+.iconim-android{background-position: -1152px 0px;}
+.iconim-ios{background-position: -1176px 0px;}

@@ -1,0 +1,16 @@
+<% provide(:title, "New Sector") %>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "Back", :back %>
+        <span class="divider">/</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for @sector do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>

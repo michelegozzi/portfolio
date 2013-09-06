@@ -1,6 +1,22 @@
 Portfolio::Application.routes.draw do
+  
   root :to => "static_pages#home"
 
+  namespace :admin do
+    resources :images do
+      collection do
+        post 'upload'
+      end
+    end
+  end
+
+  resources :sectors
+  resources :users, only: [:show, :new, :edit, :update]
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/contact', to: 'static_pages#contact'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

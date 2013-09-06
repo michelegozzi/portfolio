@@ -1,0 +1,45 @@
+<% provide(:title, "Sector Details") %>
+<% #include_javascript 'sectors/show.js' %>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "All", sectors_path %>
+        <span class="divider">/</span>
+      </li>
+      <li>
+        <%= link_to "Edit", edit_sector_path(@sector) %>
+        <span class="divider">/</span>
+      </li>
+      <li>
+        <%= link_to "New", new_sector_path %>
+        <span class="divider">/</span>
+      </li>
+      <li> 
+        <%= link_to "Delete", sector_path(@sector), method: :delete, data: { confirm: "You sure?" } %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Icon:</th>
+          <th>Description:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="<%= @sector.icon_class %> vertical-aligned-btn-content"></i></td>
+          <td><%= @sector.description %></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

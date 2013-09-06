@@ -1,0 +1,12 @@
+defaults: &defaults
+  username: 'asdf'
+  password: '12345678'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

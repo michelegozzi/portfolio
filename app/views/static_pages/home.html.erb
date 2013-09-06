@@ -10,7 +10,7 @@
   <div class="offset2 span8">
     <ul class="nav nav-tabs" id="pTab">
       <% @sectors.each do |sector| %>
-        <li><a href="#<%= sector.description.downcase.tr(" ","_") %>"><%= sector.description.titleize %></a></li>
+        <li><a href="#<%= sector.description.downcase.tr(" ","_") %>"><i class="<%= sector.icon_class %> vertical-aligned-btn-content"></i>&nbsp;<span class=""><%= sector.description.titleize %></span></a></li>
       <% end %>
     </ul>
     <div class="tab-content">

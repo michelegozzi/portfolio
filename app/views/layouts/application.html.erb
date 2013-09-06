@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><%= full_title(yield(:title)) %></title>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= yield(:extraheadstyle) %>
@@ -11,9 +12,11 @@
 		<%= yield(:extrahead) %>
 	</head>
 	<body>
+    <%= render 'layouts/header' %>
     <div id="holder">
-  		<%= render 'layouts/header' %>
-  		<div id="#body" class="container">
+  		
+  		
+      <div id="#body" class="container-fluid">
   			<% flash.each do |key, value| %>
   				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
   			<% end %>
