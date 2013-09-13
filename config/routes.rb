@@ -1,5 +1,5 @@
 Portfolio::Application.routes.draw do
-  
+
   root :to => "static_pages#home"
 
   namespace :admin do
@@ -11,6 +11,11 @@ Portfolio::Application.routes.draw do
   end
 
   resources :sectors
+  resources :projects do
+    collection do
+      post 'upload'
+    end
+  end
   resources :users, only: [:show, :new, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new'

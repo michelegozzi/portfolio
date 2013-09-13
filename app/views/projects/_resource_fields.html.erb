@@ -1,0 +1,18 @@
+<tr>
+  <td class="display-name">
+    <%= f.text_field :display_name, :class => 'resource-display-name-field' %>
+  </td>
+  
+  <td class="file-path">
+    <%= f.text_field :file_path, :class => 'resource-filepath-field span10', :readonly => true %>
+    <% # = f.text_field :filename, :class => 'resource-filename-field span10', :readonly => true %>
+    
+    <%= link_to '<i class="icon-upload"></i>'.html_safe, '#resource_upload_dialog', :role => 'button', :class => 'btn-resource-file-upload' %>
+  </td>
+  <!--<td class="mime-type">-->
+    <% # = f.select :mime_type, Resource::MIME_TYPES, {:prompt => 'Choose ...'}, :class => 'resource-mime-type-field' %>
+  <!--</td>-->
+  <td class="remove">
+    <%= link_to_remove_fields '<i class="icon-remove"></i>'.html_safe, f, :resources %>
+  </td>
+</tr>

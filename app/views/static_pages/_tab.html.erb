@@ -1,18 +1,21 @@
-<div class="tab-pane active" id="<%= object.description.downcase.tr(" ","_") %>">
+  <div class="tab-pane active" id="<%= object.description.downcase.tr(" ","_") %>">
 
   <% object.projects.order("id asc").each do |project| %>
     <section>
     <h2><%= project.name.upcase %></h2>
     <div class="row-fluid">
-
       <div class="span4">
         <h4>Resources:</h4>
         <% if project.resources.any? %>
         <ul>
           <% project.resources.order("id asc").each do |r| %>
-
             <li>
-              <%= link_to r.description.capitalize, image_path(r.url), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+              <% #if File.dirname(r.file_path).eql?('.') %>
+                <%= link_to r.display_name.capitalize, image_path(File.join('images', r.project.uuid.downcase.parameterize("_"), File.basename(r.file_path))), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+                <% # = link_to r.display_name.capitalize, image_path(r.file_path), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+              <% #else %>
+                <% # = link_to r.display_name.capitalize, r.file_path, :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+              <% # end %>
             </li>
           <% end %>
         </ul>
@@ -20,7 +23,6 @@
           <span class="label label-warning">No resources available</span>
         <% end %>
       </div>
-
       <div class="span8">
         <h4>Description:</h4>
         <div class="bs-docs">

@@ -1,0 +1,45 @@
+<% include_javascript 'projects/resources.js' %>
+<% include_javascript 'projects/fields.js' %>
+
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <%= f.label :name, placeholder: "Put your project display name here..." %>
+    <%= f.text_field :name %>
+    <%= f.label :description, placeholder: "Put your project description here..." %>
+    <%= f.text_field :description %>
+    <%= f.label :url, placeholder: "Put your project url here..." %>
+    <%= f.text_field :url %>
+    <%= f.label 'Sector' %>
+    <%= f.select :sector_id, Sector.all.collect { |s| [s.description, s.id] }, {:include_blank => 'Choose ...'} %>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <%= f.label 'Resources' %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="span4">Display Name</th>
+          <th class="span4">File Path</th>
+          <!--<th class="span3">Mime Type</th>-->
+          <th class="span1"><%= link_to_add_resource_fields '<i class="icon-plus"></i>'.html_safe, f, :resources %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= f.fields_for :resources, @project.resources do |resource_fields| %>
+          <%= render :partial => 'resource_fields', :locals => { :f => resource_fields } %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary" %>
+  </div>
+</div>
+<% # = debug(f.object) if Rails.env.development? %>

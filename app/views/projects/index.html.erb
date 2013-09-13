@@ -1,0 +1,25 @@
+<% provide(:title, "Project Manager") %>
+<h1>Project Manager</h1>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "New", new_project_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <div class="row-fluid">
+      <div class="span12">
+        <% if @projects.any? %>
+          <h3>projects (<%= @projects.count %>)</h3>
+          <%= render "projects_table" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,6 @@ jQuery(document).ready(function () {
     $(this).tab('show');
   });
 
-
   jQuery('.tab-content')
     .children()
     .each(function (){
@@ -23,6 +22,4 @@ jQuery(document).ready(function () {
         height: "80%"
       });
     });
-
-  
 });

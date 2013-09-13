@@ -1,0 +1,19 @@
+<% provide(:title, "New Project") %>
+<h1>New Project</h1>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "Back", :back %>
+        <span class="divider">/</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for @project do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>
+
+<%= render 'upload_dialog' %>

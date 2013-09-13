@@ -7,18 +7,19 @@
 		<%= yield(:extraheadstyle) %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
-		
 		<%= render 'layouts/shim' %>
 		<%= yield(:extrahead) %>
 	</head>
 	<body>
     <%= render 'layouts/header' %>
     <div id="holder">
-  		
-  		
       <div id="#body" class="container-fluid">
   			<% flash.each do |key, value| %>
-  				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+          <div class="row-fluid">
+            <div class="span6 offset3">
+  				    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+            </div>
+          </div>
   			<% end %>
   			<%= yield %>
   		</div>

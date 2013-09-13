@@ -1,0 +1,28 @@
+
+
+<% provide(:title, "Edit Project") %>
+<h1>Edit Project</h1>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "Back", :back %>
+        <span class="divider">/</span>
+      </li>
+      <li>
+        <%= link_to "New", new_project_path %>
+        <span class="divider">/</span>
+      </li>
+      <li>
+        <%= link_to "Delete", @project, method: :delete, data: { confirm: "You sure?" } %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for @project do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>
+
+<%= render 'upload_dialog' %>
