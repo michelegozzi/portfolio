@@ -12,7 +12,7 @@ class Resource < ActiveRecord::Base
   #after_initialize :set_filename
   before_destroy :remove_file
   before_save :set_mimetype
-  before_save :set_encoded_file
+  #before_save :set_encoded_file
   #after_save :move_file
   #after_save :remove_file
 
