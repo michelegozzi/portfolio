@@ -1,7 +1,7 @@
 ActiveRecord::MissingAttributeError = ActiveModel::MissingAttributeError unless defined?(ActiveRecord::MissingAttributeError)
 
 class Resource < ActiveRecord::Base
-  attr_accessible :display_name, :mime_type, :file_path
+  attr_accessible :display_name, :mime_type, :file_path, :encoded_file
 
   belongs_to :project
 
