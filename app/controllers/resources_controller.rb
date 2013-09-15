@@ -6,10 +6,20 @@ class ResourcesController < ApplicationController
       decoded = Base64.decode64(@resource.encoded_file)
       send_data decoded, :type => @resource.mime_type, :disposition => 'inline'
     else
-      msg = 'Causes: ' + @resource.nil? ? 'nil resource' : ''
-      msg += ', nil mime type' if @resource.mime_type.nil?
-      msg += ', nil encoded file' if @resource.encoded_file.nil?
-      flash[:error] = "Profile updated"
+      msg = 'Causes: '
+      if @resource.nil? 
+        msg += ' [nil resource]'
+      end
+
+      if @resource.mime_type.nil?
+        msg += ' [nil mime type]'
+      end
+
+      if @resource.encoded_file.nil?
+        msg += ' [nil encoded file]'
+      end
+
+      flash[:error] = msg
     end
   end
 end
