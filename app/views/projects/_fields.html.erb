@@ -5,14 +5,16 @@
 
 <div class="row-fluid">
   <div class="span6 offset3">
+    <%= f.label 'Sector' %>
+    <%= f.select :sector_id, Sector.all.collect { |s| [s.description, s.id] }, {:include_blank => 'Choose ...'} %>
     <%= f.label :name, placeholder: "Put your project display name here..." %>
     <%= f.text_field :name %>
     <%= f.label :description, placeholder: "Put your project description here..." %>
     <%= f.text_field :description %>
     <%= f.label :url, placeholder: "Put your project url here..." %>
     <%= f.text_field :url %>
-    <%= f.label 'Sector' %>
-    <%= f.select :sector_id, Sector.all.collect { |s| [s.description, s.id] }, {:include_blank => 'Choose ...'} %>
+    <%= f.label :uuid, placeholder: "Put your project uuid here..." %>
+    <%= f.text_field :uuid %>
   </div>
 </div>
 

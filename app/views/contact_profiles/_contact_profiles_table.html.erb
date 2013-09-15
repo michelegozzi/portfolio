@@ -1,0 +1,40 @@
+<% include_javascript 'contact_profiles/contact_profiles_table.js' %>
+
+<table id="contact_profiles_table" class="table table-bordered table-hover sortable">
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th><%= sortable "name", "Name" %></th>
+      <th><%= sortable "value", "Value" %></th>
+      <th><%= sortable "profile_type", "Type" %></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contact_profiles.each do |contact_profile| %>
+
+    <tr>
+      <td class="icon clickable">
+        <i class="<%= contact_profile.icon_class %> vertical-aligned-btn-content"></i>
+      </td>
+      <td class="name clickable">
+        <%= contact_profile.name %>
+      </td>
+      <td class="value clickable">
+        <%= contact_profile.value %>
+      </td>
+      <td class="type clickable">
+        <%= contact_profile.profile_type %>
+      </td>
+      <td>
+        <%= link_to "Delete", contact_profile_path(contact_profile), method: :delete, data: { confirm: "You sure?" } %>
+      </td>
+      
+      <input type="hidden" name="id" value="<%= contact_profile.id %>" />
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @contact_profiles %>

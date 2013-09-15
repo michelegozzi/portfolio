@@ -1,2 +1,31 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<% provide(:title, 'Contact') %>
+
+<h1>Contact</h1>
+
+<div class="row-fluid">
+  <div class="offset5 span2">
+    Fell free to contact me by:
+  </div>
+</div>
+
+<% if @contact_profiles.any? %>
+  <% @contact_profiles.each do |cp| %>
+    <div class="row-fluid">
+      <div class="offset5 span2">
+        <i class="<%= cp.icon_class %> vertical-aligned-btn-content"></i><span class="vertical-aligned-btn-content">&nbsp;
+          <% if cp.profile_type == ContactProfile::TYPES[:email] %>
+            <%= mail_to cp.value, cp.name %>
+          <% else %>
+            <%= link_to cp.name, cp.value %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="row-fluid">
+    <div class="offset5 span2">
+      <span class="label label-warning">Sorry, no contact available.</span>
+    </div>
+  </div>
+<% end %>

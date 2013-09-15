@@ -4,7 +4,9 @@
 			<%= link_to "PORTFOLIO", root_path, id: "logo" %>
 			<nav>
         <ul class="nav">
-          <li><%= link_to "Contact", contact_path %></li>
+          <li>
+            <%= link_to "Contact", contact_path %>
+          </li>
           
           <% ### ADMIN SECTION ### %>
           <% if signed_in? %>
@@ -20,9 +22,9 @@
                 <li>
                   <%= link_to "Projects", projects_path %>
                 </li>
-                <li>
-                  <%= link_to "Resources", '#' %>
-                </li>
+                <!--<li>-->
+                  <% # = link_to "Resources", '#' %>
+                <!--</li>-->
               </ul>
             </li>
 

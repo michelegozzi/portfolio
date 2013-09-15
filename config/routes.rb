@@ -10,6 +10,7 @@ Portfolio::Application.routes.draw do
     end
   end
 
+  resources :contact_profiles
   resources :sectors
   resources :projects do
     collection do

@@ -1,0 +1,25 @@
+<% provide(:title, "Contact Profiles Manager") %>
+<h1>Contact Profiles Manager</h1>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "New", new_contact_profile_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <div class="row-fluid">
+      <div class="span12">
+        <% if @contact_profiles.any? %>
+          <h3>Contact Profiles</h3>
+          <%= render "contact_profiles_table" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

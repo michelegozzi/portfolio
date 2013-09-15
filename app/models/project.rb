@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :description, :name, :url, :sector_id, :resources_attributes
+  attr_accessible :description, :name, :url, :sector_id, :resources_attributes, :uuid
 
   has_many :resources, :dependent => :destroy
 
@@ -14,7 +14,9 @@ class Project < ActiveRecord::Base
   validates :sector_id, presence: true
 
   def create_uuid
-    self.uuid = SecureRandom.uuid
+    if self.uuid.nil?
+      self.uuid = SecureRandom.uuid
+    end
   end
 
   def resources_attributes_blank?(attrs)
