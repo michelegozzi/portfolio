@@ -14,7 +14,7 @@ class Resource < ActiveRecord::Base
   before_save :set_mimetype
   before_save :set_encoded_file
   #after_save :move_file
-  after_save :remove_file
+  #after_save :remove_file
 
   private
     # Set the filename attribute
@@ -37,7 +37,13 @@ class Resource < ActiveRecord::Base
     def set_encoded_file
       if !self.file_path.nil?
         path = Rails.root.join('public/assets/uploads', self.file_path)
-        self.encoded_file = Base64.encode64(File.open(path).read) if File.exist?(path)
+
+        logger.info "file to encode #{path}"
+
+        if File.exist?(path)
+          self.encoded_file = Base64.encode64(File.open(path).read)
+          logger.info "file encoded"
+        end
       end
     end
 
