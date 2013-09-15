@@ -19,7 +19,8 @@ jQuery(document).ready(function () {
         current: "{current} of {total}",
         scalePhotos: true,
         width: "80%",
-        height: "80%"
+        height: "80%",
+        photo: true
       });
     });
 });

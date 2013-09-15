@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130915071443) do
+ActiveRecord::Schema.define(:version => 20130915152318) do
 
   create_table "contact_profiles", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130915071443) do
     t.integer  "project_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "encoded_file"
   end
 
   add_index "resources", ["project_id"], :name => "index_resources_on_project_id"

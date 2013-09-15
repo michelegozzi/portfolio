@@ -12,7 +12,9 @@ class Resource < ActiveRecord::Base
   #after_initialize :set_filename
   before_destroy :remove_file
   before_save :set_mimetype
-  after_save :move_file
+  before_save :set_encoded_file
+  #after_save :move_file
+  after_save :remove_file
 
   private
     # Set the filename attribute
@@ -32,6 +34,13 @@ class Resource < ActiveRecord::Base
     rescue ActiveRecord::MissingAttributeError
     end
 
+    def set_encoded_file
+      if !self.file_path.nil?
+        path = Rails.root.join('public/assets/uploads', self.file_path)
+        self.encoded_file = Base64.encode64(File.open(path).read) if File.exist?(path)
+      end
+    end
+
     # Remove the file
     def remove_file
       if !self.file_path.nil?
@@ -43,14 +52,14 @@ class Resource < ActiveRecord::Base
     rescue ActiveRecord::MissingAttributeError
     end
 
-    def move_file
-      if !self.file_path.nil?
-        source = Rails.root.join('public/assets/uploads', self.file_path)
-        dest = Rails.root.join('public/assets/images', self.project.uuid.downcase.parameterize("_"), self.file_path)
+    #def move_file
+    #  if !self.file_path.nil?
+    #    source = Rails.root.join('public/assets/uploads', self.file_path)
+    #    dest = Rails.root.join('public/assets/images', self.project.uuid.downcase.parameterize("_"), self.file_path)
         #debugger
-        FileUtils.mkdir_p(Rails.root.join('public/assets/images', self.project.uuid.downcase.parameterize("_")))
-        FileUtils.mv(source, dest, :force => true) if File.exist?(source)
-      end
-    rescue ActiveRecord::MissingAttributeError
-    end
+    #    FileUtils.mkdir_p(Rails.root.join('public/assets/images', self.project.uuid.downcase.parameterize("_")))
+    #    FileUtils.mv(source, dest, :force => true) if File.exist?(source)
+    #  end
+    #rescue ActiveRecord::MissingAttributeError
+    #end
 end

@@ -10,6 +10,7 @@ Portfolio::Application.routes.draw do
     end
   end
 
+  resources :resources, only: [:show]
   resources :contact_profiles
   resources :sectors
   resources :projects do

@@ -56,4 +56,9 @@ module ApplicationHelper
     link_to "#{title} #{content_tag :i, nil, class: i_css_class}".html_safe, {:sort => column, :direction => direction, :q => params[:q].nil? ? '' : params[:q]}, {:class => css_class}
   end
 
+
+  def render_resource(encoded_resource, mime_type)
+    send_data Base64.decode64(encoded_resource), :type => mime_type, :disposition => 'inline' 
+  end
+
 end

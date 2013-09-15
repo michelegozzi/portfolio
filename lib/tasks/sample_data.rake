@@ -16,6 +16,10 @@ namespace :db do
   task fixrespaths: :environment do
     fix_resources_file_paths
   end
+
+  task fixresfiles: :environment do
+    fix_resource_files
+  end
 end
 
 def add_data
@@ -68,4 +72,18 @@ def fix_resources_file_paths
     end
   end
   
+end
+
+def fix_resource_files
+  Resource.all.each do |r|
+    if !r.file_path.nil?
+      path = Rails.root.join('public/assets/images', r.project.uuid.downcase.parameterize("_"), r.file_path)
+
+      if File.exist?(path)
+        r.encoded_file = Base64.encode64(File.open(path).read)
+        r.save!
+      end
+    end
+  end
+
 end
