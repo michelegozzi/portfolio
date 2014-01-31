@@ -10,6 +10,12 @@
         <ul>
           <% project.resources.order("id asc").each do |r| %>
             <li>
+            <% # https://www.dropbox.com/s/5djv5gmj4f0llpp/screenshot_book.jpg %>
+
+              <% if r.file_path.start_with? 'https://' %>
+                <%= link_to r.display_name.capitalize, r.file_path, :target => "_blank" %>
+              <% else %>
+
               <% #if File.dirname(r.file_path).eql?('.') %>
                 <% # = link_to r.display_name.capitalize, resource_path(r), :class => "lightbox", :rel => object.description.downcase.parameterize("_") %>
                 <%= link_to r.display_name.capitalize, image_path(File.join('images', r.project.uuid.downcase.parameterize("_"), File.basename(r.file_path))), :class => "lightbox", :rel => object.description.downcase.parameterize("_") %>
@@ -17,6 +23,7 @@
               <% #else %>
                 <% # = link_to r.display_name.capitalize, r.file_path, :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
               <% # end %>
+              <% end %>
             </li>
           <% end %>
         </ul>

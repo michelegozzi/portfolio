@@ -8,6 +8,8 @@
     <% # = f.text_field :filename, :class => 'resource-filename-field span10', :readonly => true %>
     
     <%= link_to '<i class="icon-upload"></i>'.html_safe, '#resource_upload_dialog', :role => 'button', :class => 'btn-resource-file-upload' %>
+
+    <%= link_to '<i class="icon-upload"></i>'.html_safe, '#resource_dropbox', :role => 'button', :class => 'btn-resource-dropbox' %>
   </td>
   <!--<td class="mime-type">-->
     <% # = f.select :mime_type, Resource::MIME_TYPES, {:prompt => 'Choose ...'}, :class => 'resource-mime-type-field' %>

@@ -2,6 +2,11 @@ Portfolio::Application.routes.draw do
 
   root :to => "static_pages#home"
 
+  get  "dropbox/main"
+  post "dropbox/upload"
+  get  "dropbox/auth_start"
+  get  "dropbox/auth_finish"
+
   namespace :admin do
     resources :images do
       collection do
