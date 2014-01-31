@@ -25,6 +25,16 @@ module ApplicationHelper
     content_for(:extrahead, raw(s))
   end
 
+  # Renders script include tag elements for a javascript in the :extrahead placeholder
+  def include_dropbox_api ()
+    s = " <script type=\"text/javascript\" src=\"https://www.dropbox.com/static/api/2/dropins.js\" id=\"dropboxjs\" data-app-key=\"zpabeg0ylo7r0vd\"></script>"
+    content_for(:extrahead, raw(s))
+
+
+#<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="zpabeg0ylo7r0vd"></script>
+
+  end
+
   # Creates a link tag that renders the form fields elements for the nested Resource model
   # Example:
   #   <%= link_to_add_resource_fields '<i class="icon-plus icon-white"></i>'.html_safe, f, :activities, category_id %>

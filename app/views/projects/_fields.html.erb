@@ -1,6 +1,7 @@
 <% include_javascript 'projects/resources.js' %>
 <% include_javascript 'projects/fields.js' %>
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="zpabeg0ylo7r0vd"></script>
+<% include_dropbox_api %>
+<!--<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="zpabeg0ylo7r0vd"></script>-->
 
 <%= render 'shared/error_messages', object: f.object %>
 
