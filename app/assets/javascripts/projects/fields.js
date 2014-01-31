@@ -5,47 +5,49 @@ $(document).ready(function() {
     });
 
   $('.btn-resource-dropbox')
-		.click(function() {
-
-			var input = $(this).siblings('input.resource-filepath-field');
-
-		    options = {
-
-		    // Required. Called when a user selects an item in the Chooser.
-			    success: function(files) {
-			        //alert("Here's the file link: " + files[0].link)
-			        input.val(files[0].link);
-			    },
-
-			    // Optional. Called when the user closes the dialog without selecting a file
-			    // and does not include any parameters.
-			    cancel: function() {
-
-			    },
-
-			    // Optional. "preview" (default) is a preview link to the document for sharing,
-			    // "direct" is an expiring link to download the contents of the file. For more
-			    // information about link types, see Link types below.
-			    linkType: "preview", // or "direct"
-
-			    // Optional. A value of false (default) limits selection to a single file, while
-			    // true enables multiple file selection.
-			    multiselect: false, // or true
-
-			    // Optional. This is a list of file extensions. If specified, the user will
-			    // only be able to select files with these extensions. You may also specify
-			    // file types, such as "video" or "images" in the list. For more information,
-			    // see File types below. By default, all extensions are allowed.
-			    extensions: ['.jpg', '.gif', '.png'],
-			};
-
-			Dropbox.choose(options);
+    .click(function() {
+      $(this).toggleDropboxDialog();
     });
-
-
-    
-
 
   //var button = Dropbox.createChooseButton(options);
   //$('.file-path').appendChild(button);
 });
+
+$.fn.toggleDropboxDialog=function()
+{
+  console.log(this);
+
+  var input = this.siblings('input.resource-filepath-field');
+
+  options = {
+
+  // Required. Called when a user selects an item in the Chooser.
+    success: function(files) {
+        //alert("Here's the file link: " + files[0].link)
+        input.val(files[0].link);
+    },
+
+    // Optional. Called when the user closes the dialog without selecting a file
+    // and does not include any parameters.
+    cancel: function() {
+
+    },
+
+    // Optional. "preview" (default) is a preview link to the document for sharing,
+    // "direct" is an expiring link to download the contents of the file. For more
+    // information about link types, see Link types below.
+    linkType: "preview", // or "direct"
+
+    // Optional. A value of false (default) limits selection to a single file, while
+    // true enables multiple file selection.
+    multiselect: false, // or true
+
+    // Optional. This is a list of file extensions. If specified, the user will
+    // only be able to select files with these extensions. You may also specify
+    // file types, such as "video" or "images" in the list. For more information,
+    // see File types below. By default, all extensions are allowed.
+    //extensions: ['.jpg', '.gif', '.png'],
+  };
+
+  Dropbox.choose(options);
+};

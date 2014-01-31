@@ -26,6 +26,12 @@ function add_resource_fields(link, association, content) {
       $(this).toggleUploadDialog();
     });
 
+  ar.find('.btn-resource-dropbox')
+    .last()
+    .click(function() {
+      $(this).toggleDropboxDialog();
+    });
+
   /*.click(function() {
     $('#resource_upload_dialog').modal('toggle');
   });
