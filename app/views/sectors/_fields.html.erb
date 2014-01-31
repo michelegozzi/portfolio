@@ -26,11 +26,11 @@
       <!-- Carousel items -->
       <div class="carousel-inner">
 
-        <% (1..IconImagemagick.pages).each do |page| %>
+        <% (1..IconSector.pages).each do |page| %>
           <div class="<%= 'active' unless page > 1 %> item">
             <div class="row-fluid">
               <div class="span8 offset2">
-                <% IconImagemagick.elements_per_page(page).each_with_index do |e,i| %>
+                <% IconSector.elements_per_page(page).each_with_index do |e,i| %>
                   
                   <% if i.even? %>
                   <div class="row-fluid">
