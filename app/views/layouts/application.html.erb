@@ -24,7 +24,11 @@
       <div id="#body" class="container-fluid">
   			<% flash.each do |key, value| %>
           <div class="row-fluid">
-            <div class="span6 offset3">
+            <aside class="span3 visible-desktop">
+              <%= yield(:aside) %>
+            </aside>
+
+            <div class="span6">
   				    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
             </div>
           </div>
