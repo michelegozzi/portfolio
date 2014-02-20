@@ -2,6 +2,7 @@ require 'rexml/document'
 include REXML
 
 namespace :db do
+
   desc "Fill database with sample data"
   task populate: :environment do
     Sector.destroy_all
