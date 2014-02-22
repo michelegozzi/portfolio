@@ -8,6 +8,9 @@ class Resource < ActiveRecord::Base
   #attr_accessor :filename
   #attr_accessible :filename
 
+  validates :display_name, presence: true, length: { maximum: 50 }
+  validates :file_path, presence: true, length: { maximum: 255 }
+
 
   #after_initialize :set_filename
   before_destroy :remove_file
