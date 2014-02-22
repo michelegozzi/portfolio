@@ -65,8 +65,57 @@ namespace :user do |args|
       puts "account created."
       exit(0)
     end
-
   end
 
+  desc "Create user"
+  # rake user:create2 name=admin usr=email pwd=password
+  task :create2 => :environment  do
+    
+    usage = "USAGE: rake user:create2 name=admin usr=email pwd=password"
+
+    name = ENV['name']
+    usr = ENV['usr']
+    pwd = ENV['pwd']
+
+    if usr.nil?
+      puts "usr is null."
+      puts usage
+      exit(1)
+    end
+
+    if name.nil?
+      puts "name is null."
+      puts usage
+      exit(1)
+    end
+
+    if pwd.nil?
+      puts "pwd is null."
+      puts usage
+      exit(1)
+    end
+
+    puts "creating user account..."
+
+    user = User.find_by_email(usr)
+    if user
+      puts "the account already exists."
+      exit(1)
+    else
+
+      user = User.new
+      user.name = name
+      user.email = usr
+      user.password = pwd
+      user.password_confirmation = pwd
+      user.save!
+
+      #User.create!(name: "xxx", email: "yyy", password: "zzz", password_confirmation: "zzz")
+
+      puts "account created."
+      exit(0)
+    end
+
+  end
   
 end
