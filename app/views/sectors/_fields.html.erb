@@ -2,7 +2,7 @@
 <% include_javascript 'sectors/fields.js' %>
 
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
+  <div class="content-layout">
 
     <div class="form-group">
       <%= f.label :description, placeholder: "Put your sector display name here..." %>
@@ -33,7 +33,7 @@
           <% (1..IconSector.pages).each do |page| %>
             <div class="<%= 'active' unless page > 1 %> item">
               <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="carousel-layout">
                   <% IconSector.elements_per_page(page).each_with_index do |e,i| %>
                     
                     <% if i.even? %>
@@ -60,7 +60,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary" %>
+      <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary submit-layout" %>
     </div>
   </div>
 </div>

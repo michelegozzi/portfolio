@@ -6,7 +6,7 @@
 <%= render 'shared/error_messages', object: f.object %>
 
 <div class="row">
-  <div class="col-xs-10 col-xs-offset-1 col-lg-8 col-lg-offset-2">
+  <div class="content-layout">
     <div class="form-group">
       <%= f.label 'Sector' %>
       <%= f.select :sector_id, Sector.all.collect { |s| [s.description, s.id] }, {:include_blank => 'Choose ...'}, class: "form-control" %>
@@ -31,7 +31,7 @@
     <div class="form-group">
       <%= f.label 'Resources' %>
       <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table-layout">
           <thead>
             <tr>
               <th class="col-xs-5">Display Name</th>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary" %>
+      <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary submit-layout" %>
     </div>
   </div>
 </div>

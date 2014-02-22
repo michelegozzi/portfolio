@@ -1,68 +1,74 @@
 <%= render 'shared/error_messages', object: f.object %>
 <% include_javascript 'contact_profiles/fields.js' %>
 
-<div class="row-fluid">
-  <div class="span6 offset3">
-    <%= f.label :name, placeholder: "Put your contact profile display name here..." %>
-    <%= f.text_field :name %>
-    <%= f.label :value, placeholder: "Put your contact profile value here..." %>
-    <%= f.text_field :value %>
-    <%= f.label :profile_type %>
-    <%= f.select :profile_type, ContactProfile::TYPES, {:prompt => 'Choose ...'} %>
+<div class="row">
+  <div class="content-layout">
+    <div class="form-group">
+      <%= f.label :name, placeholder: "Put your contact profile display name here..." %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :value, placeholder: "Put your contact profile value here..." %>
+      <%= f.text_field :value, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :profile_type %>
+      <%= f.select :profile_type, ContactProfile::TYPES, {:prompt => 'Choose ...'}, class: "form-control" %>
+    </div>
 
-    <%= f.label :icon %>
-    <%= f.hidden_field :icon_name %>
-    <%= f.hidden_field :icon_class %>
-    <span id="not_selected_icon_warning" class="label label-warning">Icon not setted</span>
-    <i id="selected_icon_class" class="vertical-aligned-btn-content"></i>&nbsp;<span id="selected_icon_name"></span>
-    <%= link_to "Change", "#", id: 'change_icon' %>
-  </div>
-</div>
-<div class="row-fluid">
-  <div class="span4 offset4">
-    <div id="iconCarousel" class="carousel slide">
-      <!--
-      <ol class="carousel-indicators">
-        <li data-target="#iconCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#iconCarousel" data-slide-to="1"></li>
-        <li data-target="#iconCarousel" data-slide-to="2"></li>
-      </ol>
-      -->
-      <!-- Carousel items -->
-      <div class="carousel-inner">
+    <div class="form-group">
+      <%= f.label :icon %>
+      <%= f.hidden_field :icon_name %>
+      <%= f.hidden_field :icon_class %>
+      <span id="not_selected_icon_warning" class="label label-warning">Icon not setted</span>
+      <i id="selected_icon_class" class="vertical-aligned-btn-content"></i>&nbsp;<span id="selected_icon_name"></span>
+      <%= link_to "Change", "#", id: 'change_icon' %>
+    </div>
 
-        <% (1..IconImagemagick.pages).each do |page| %>
-          <div class="<%= 'active' unless page > 1 %> item">
-            <div class="row-fluid">
-              <div class="span8 offset2">
-                <% IconImagemagick.elements_per_page(page).each_with_index do |e,i| %>
-                  
-                  <% if i.even? %>
-                  <div class="row-fluid">
-                  <% end %>
-                    <div class="span6">
-                      <i class="<%= e[1].to_s %> vertical-aligned-btn-content"></i><span class="vertical-aligned-btn-content">&nbsp;<%= e[0].to_s %></span>
-                      <input type="hidden" id="element_name" value="<%= e[0].to_s %>" />
-                      <input type="hidden" id="element_class" value="<%= e[1].to_s %>" />
+    <div class="form-group">
+      <div id="iconCarousel" class="carousel slide">
+        
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+
+          <% (1..IconImagemagick.pages).each do |page| %>
+            <div class="<%= 'active' unless page > 1 %> item">
+              <div class="row">
+                <div class="carousel-layout">
+                  <% IconImagemagick.elements_per_page(page).each_with_index do |e,i| %>
+                    
+                    <% if i.even? %>
+                    <div class="row">
+                    <% end %>
+                      <div class="carousel-page-layout">
+                        <i class="<%= e[1].to_s %> vertical-aligned-btn-content"></i><span class="vertical-aligned-btn-content">&nbsp;<%= e[0].to_s %></span>
+                        <input type="hidden" id="element_name" value="<%= e[0].to_s %>" />
+                        <input type="hidden" id="element_class" value="<%= e[1].to_s %>" />
+                      </div>
+                    <% if i.odd? %>
                     </div>
-                  <% if i.odd? %>
-                  </div>
+                    <% end %>
                   <% end %>
-                <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#iconCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#iconCarousel" data-slide="next">&rsaquo;</a>
       </div>
-      <!-- Carousel nav -->
-      <a class="carousel-control left" href="#iconCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="carousel-control right" href="#iconCarousel" data-slide="next">&rsaquo;</a>
     </div>
+
+    <div class="form-group">
+      <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary submit-layout" %>
+    </div>
+
   </div>
+
+
+
 </div>
-<div class="row-fluid">
-  <div class="span4 offset4">
-    <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary" %>
-  </div>
-</div>
+
 <%= debug(f.object) if Rails.env.development? %>
+

@@ -262,3 +262,51 @@ ul.resource-buttons li {
 .alert {
   text-align: -webkit-center;
 }
+
+/* responsive layouts */
+
+.breadcrumb-layout, .content-layout, .carousel-layout, .error-panel-layout {
+  @extend .col-xs-10;
+  @extend .col-xs-offset-1;
+  @extend .col-lg-8;
+  @extend .col-lg-offset-2;
+}
+
+.login-layout {
+  @extend .col-xs-8;
+  @extend .col-xs-offset-2;
+  @extend .col-lg-6;
+  @extend .col-lg-offset-3;
+}
+
+.carousel-page-layout {
+  @extend .col-xs-6;
+}
+
+.submit-layout {
+  @extend .col-xs-12;
+  @extend .col-xs-offset-0;
+  @extend .col-lg-4;
+  @extend .col-lg-offset-8;
+} 
+
+.table-layout {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-hover;
+  /*@extend .sortable*/
+}
+
+.menu-layout {
+  @extend .col-xs-6;
+  @extend .col-xs-offset-3;
+  @extend .col-lg-4;
+  @extend .col-lg-offset-4;
+}
+
+.page-layout, .message-panel-layout {
+  @extend .col-xs-12;
+  @extend .col-xs-offset-0;
+  @extend .col-lg-8;
+  @extend .col-lg-offset-2;
+}
