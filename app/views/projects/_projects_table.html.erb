@@ -3,10 +3,10 @@
 <table id="projectsTable" class="table table-bordered table-hover sortable">
   <thead>
     <tr>
-      <th class="span3"><%= sortable "name", "Name" %></th>
-      <th class="span3"><%= sortable "sectors.description", "Sector" %></th>
-      <th class="span5">Description</th>
-      <th class="span1">&nbsp;</th>
+      <th class="col-xs-3"><%= sortable "name", "Name" %></th>
+      <th class="col-xs-3"><%= sortable "sectors.description", "Sector" %></th>
+      <th class="col-xs-5">Description</th>
+      <th class="col-xs-1">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -34,5 +34,4 @@
     <% end %>
   </tbody>
 </table>
-
-<%= will_paginate @projects %>
+<%= will_paginate @projects, renderer: BootstrapPagination::Rails %>

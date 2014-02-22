@@ -1,24 +1,27 @@
 <tr>
-  <td class="display-name">
-    <%= f.text_field :display_name, :class => 'resource-display-name-field' %>
+  <td>
+    <%= f.text_field :display_name, :class => 'resource-display-name-field form-control' %>
   </td>
   
-  <td class="file-path">
-    <span class="iwt">
-    <%= f.text_field :file_path, :class => 'resource-filepath-field span9' %>
-    <% # = f.text_field :filename, :class => 'resource-filename-field span10', :readonly => true %>
-    
-    <%= link_to '<i class="icon-upload"></i>'.html_safe, '#resource_upload_dialog', :role => 'button', :class => 'btn-resource-file-upload' %>
-
-    <%= link_to '<i class="iconim-dropbox"></i>'.html_safe, '#resource_dropbox', :role => 'button', :class => 'btn-resource-dropbox' %>
-    </span>
-
-    
+  <td>
+    <%= f.text_field :file_path, :class => 'resource-filepath-field form-control' %>
+    <% # = f.text_field :filename, :class => 'resource-filename-field', :readonly => true %>
   </td>
-  <!--<td class="mime-type">-->
-    <% # = f.select :mime_type, Resource::MIME_TYPES, {:prompt => 'Choose ...'}, :class => 'resource-mime-type-field' %>
-  <!--</td>-->
-  <td class="remove">
-    <%= link_to_remove_fields '<i class="icon-remove"></i>'.html_safe, f, :resources %>
+  <td style="vertical-align:middle">
+    <ul class="resource-buttons">
+      <li>
+        <%= link_to bs3glyphincon('cloud'), '#resource_dropbox', :role => 'button', :class => 'btn-resource-dropbox' %>
+      </li>
+      <li>
+        <%= link_to bs3glyphincon('upload'), '#resource_upload_dialog', :role => 'button', :class => 'btn-resource-file-upload' %>
+      </li>
+      <li>
+    <!--<td class="mime-type">-->
+      <% # = f.select :mime_type, Resource::MIME_TYPES, {:prompt => 'Choose ...'}, :class => 'resource-mime-type-field' %>
+    <!--</td>-->
+        <%= link_to_remove_fields bs3glyphincon('trash'), f, :resources %>
+      </li>
+    </ul>
+    
   </td>
 </tr>

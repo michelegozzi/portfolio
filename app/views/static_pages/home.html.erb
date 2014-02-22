@@ -6,17 +6,13 @@
 <% include_javascript 'jqueryplugins/colorbox/jquery.colorbox-min.js' %>
 <% include_javascript 'static_pages/index.js' %>
 
-<div class="row-fluid">
-  <div class="offset2 span8">
-    <ul class="nav nav-tabs" id="pTab">
-      <% @sectors.each do |sector| %>
-        <li><a href="#<%= sector.description.downcase.tr(" ","_") %>"><i class="<%= sector.icon_class %> vertical-aligned-btn-content"></i>&nbsp;<span class=""><%= sector.description.titleize %></span></a></li>
-      <% end %>
-    </ul>
-    <div class="tab-content">
-      <% @sectors.each do |sector| %>
-        <%= render 'tab', object: sector %>
-      <% end %>
-    </div>
-  </div>
+<ul class="nav nav-tabs" id="pTab">
+  <% @sectors.each do |sector| %>
+    <li><a href="#<%= sector.description.downcase.tr(" ","_") %>"><i class="<%= sector.icon_class %> vertical-aligned-btn-content"></i>&nbsp;<span class=""><%= sector.description.titleize %></span></a></li>
+  <% end %>
+</ul>
+<div class="tab-content">
+  <% @sectors.each do |sector| %>
+    <%= render 'tab', object: sector %>
+  <% end %>
 </div>

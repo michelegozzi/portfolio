@@ -2,26 +2,36 @@
 
 <h1>Contact</h1>
 
-<div class="row-fluid">
-  <div class="offset5 span2">
-    Fell free to contact me by:
-  </div>
-</div>
+
+
+
+
 
 <% if @contact_profiles.any? %>
-  <% @contact_profiles.each do |cp| %>
-    <div class="row-fluid">
-      <div class="offset5 span2">
-        <i class="<%= cp.icon_class %> vertical-aligned-btn-content"></i><span class="vertical-aligned-btn-content">&nbsp;
-          <% if cp.profile_type == ContactProfile::TYPES[:email] %>
-            <%= mail_to cp.value, cp.name %>
-          <% else %>
-            <%= link_to cp.name, cp.value %>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2 col-lg-4 col-lg-offset-4">
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          Fell free to contact me by:
+        </div>
+
+        <ul class="list-group">
+          <% @contact_profiles.each do |cp| %>
+            <li class="list-group-item">
+              <i class="<%= cp.icon_class %> vertical-aligned-btn-content"></i><span class="vertical-aligned-btn-content">&nbsp;
+                <% if cp.profile_type == ContactProfile::TYPES[:email] %>
+                  <%= mail_to cp.value, cp.name %>
+                <% else %>
+                  <%= link_to cp.name, cp.value %>
+                <% end %>
+              </span>
+            </li>
           <% end %>
-        </span>
+        </ul>
       </div>
     </div>
-  <% end %>
+  </div>
 <% else %>
   <div class="row-fluid">
     <div class="offset5 span2">

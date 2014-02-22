@@ -1,52 +1,26 @@
-  <div class="tab-pane active" id="<%= object.description.downcase.tr(" ","_") %>">
-
+<div class="tab-pane active" id="<%= object.description.downcase.tr(" ","_") %>">
   <% object.projects.order("id asc").each do |project| %>
-    <section>
     <h2><%= project.name.upcase %></h2>
-    <div class="row-fluid">
-      <div class="span4">
-        <h4>Resources:</h4>
-        <% if project.resources.any? %>
-        <ul>
-          <% project.resources.order("id asc").each do |r| %>
-            <li>
-            <% # https://www.dropbox.com/s/5djv5gmj4f0llpp/screenshot_book.jpg %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-lg-push-4">
 
-              <% if r.file_path.start_with? 'https://' %>
-                <%= link_to r.display_name.capitalize, r.file_path, :target => "_blank" %>
-              <% else %>
-
-              <% #if File.dirname(r.file_path).eql?('.') %>
-                <% # = link_to r.display_name.capitalize, resource_path(r), :class => "lightbox", :rel => object.description.downcase.parameterize("_") %>
-                <%= link_to r.display_name.capitalize, image_path(File.join('images', r.project.uuid.downcase.parameterize("_"), File.basename(r.file_path))), :class => "lightbox", :rel => object.description.downcase.parameterize("_") %>
-                <% # = link_to r.display_name.capitalize, image_path(r.file_path), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
-              <% #else %>
-                <% # = link_to r.display_name.capitalize, r.file_path, :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
-              <% # end %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-        <% else %>
-          <span class="label label-warning">No resources available</span>
-        <% end %>
-      </div>
-      <div class="span8">
-        <h4>Description:</h4>
-        <div class="bs-docs">
-          <p>
-            <%= project.description.html_safe %>
-          </p>
-          <% if !project.url.nil? && !project.url.empty?  %>
-          <p>
-            Url: <%= link_to project.name.titleize, project.url, :target => "_blank" %>
-          </p>
-          <% end %>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+              <%= project.description.html_safe %>
+            </div>
+            <% if !project.url.nil? && !project.url.empty?  %>
+              <div class="panel-footer">
+                <strong>Url:</strong>&nbsp;<%= link_to project.name.titleize, project.url, :target => "_blank" %>
+              </div>
+            <% end %>
+          </div>
         </div>
+        <%= render 'resources', project: project, description: object.description %>
       </div>
-
     </div>
-    </section>
-
   <% end %>
 </div>

@@ -1,0 +1,34 @@
+<% if project.resources.any? %>
+  <div class="col-lg-4 col-lg-pull-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Resources</h3>
+      </div>
+      <ul class="list-group">
+        <% project.resources.order("id asc").each do |r| %>
+          <li class="list-group-item">
+          <% # https://www.dropbox.com/s/5djv5gmj4f0llpp/screenshot_book.jpg %>
+
+            <% if r.file_path.start_with? 'https://' %>
+              <%= link_to r.display_name.capitalize, r.file_path, :target => "_blank" %>
+            <% else %>
+
+            <% #if File.dirname(r.file_path).eql?('.') %>
+              <% # = link_to r.display_name.capitalize, resource_path(r), :class => "lightbox", :rel => object.description.downcase.parameterize("_") %>
+              <%= link_to r.display_name.capitalize, image_path(File.join('images', r.project.uuid.downcase.parameterize("_"), File.basename(r.file_path))), :class => "lightbox", :rel => description.downcase.parameterize("_") %>
+              <% # = link_to r.display_name.capitalize, image_path(r.file_path), :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+            <% #else %>
+              <% # = link_to r.display_name.capitalize, r.file_path, :class => "lightbox", :rel => object.description.downcase.tr(" ","_") %>
+            <% # end %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% else %>
+  <div class="col-xs-0 col-lg-4 col-lg-pull-8">
+    <!--<span class="label label-warning">No resources available</span>-->
+    <div class="alert alert-warning">No resources available</div>
+  </div>
+<% end %>

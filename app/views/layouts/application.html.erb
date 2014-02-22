@@ -19,24 +19,32 @@
 		<%= yield(:extrahead) %>
 	</head>
 	<body>
-    <%= render 'layouts/header' %>
-    <div id="holder">
-      <div id="#body" class="container-fluid">
+    <div id="body">
+
+      <%= render 'layouts/header' %>
+
+      <div class="container-fluid">
   			<% flash.each do |key, value| %>
-          <div class="row-fluid">
-            <aside class="span3 visible-desktop">
+          <div class="row">
+            <aside class="col-xm-0 col-lg-3">
               <%= yield(:aside) %>
             </aside>
-
-            <div class="span6">
+            <div class="col-xm-12 col-lg-8">
   				    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
             </div>
           </div>
   			<% end %>
-  			<%= yield %>
-  		</div>
+        <div class="row">
+          <div class="col-xs-12 col-xs-offset-0 col-lg-8 col-lg-offset-2">
+  			    <%= yield %>
+          </div>
+        </div>
+      </div>
+
       <%= debug(params) if Rails.env.development? %>
-      <%= render 'layouts/footer' %>
-    </div>
+		</div>
+    
+    <%= render 'layouts/footer' %>
+    
 	</body>
 </html>

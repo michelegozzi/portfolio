@@ -2,6 +2,10 @@
 
 /* mixins, variables, etc. */
 
+$blue: #049cdb !default;
+$green: #46a546 !default;
+$red: #9d261d !default;
+
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
@@ -16,21 +20,17 @@ html,body{
     height: 100%
 }
 
-html {
+/*html {
   overflow-y: scroll;
-}
+}*/
 
-body {
-  padding-top: 60px;
-}
-
-#holder{
-    min-height: 90%;
-    position:relative;
-}
-
-#body{
-    padding-bottom: 50px;    /* height of footer */
+#body {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -50px;
+  /* Pad bottom by footer height */
+  padding: 0 0 50px;
 }
 
 section {
@@ -68,7 +68,7 @@ h2 {
   margin-top: 20px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $gray-light;
 }
 
 p {
@@ -79,6 +79,10 @@ p {
 
 /* header */
 
+.navbar-inverse .navbar-nav > li > a {
+  color: $blue;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -86,9 +90,9 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  /*padding-top: 9px;*/
   font-weight: bold;
-  line-height: 1;
+  /*line-height: 1;*/
   &:hover {
     color: white;
     text-decoration: none;
@@ -107,25 +111,25 @@ footer{
 }
 */
 
-footer {
-  margin-top: 15px;
+#footer {
+  height: 50px;
+}
+
+.footer-container {
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: $gray-light;
   a {
     color: $gray;
     &:hover { 
-      color: $grayDarker;
+      color: $gray-darker;
     }
   }  
   small { 
-    float: left; 
   }
   ul {
-    float: right;
     list-style: none;
     li {
-      float: left;
       margin-left: 10px;
     }
   }
@@ -143,10 +147,11 @@ footer {
 
 /* sidebar */
 
+/*
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $gray-lighter;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -165,13 +170,14 @@ aside {
     }
   }
 }
+*/
 
 .stats {
   overflow: auto;
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $grayLighter;
+    border-left: 1px solid $gray-lighter;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -194,7 +200,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   /*padding: 10px;*/
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
   @include box_sizing;
 }
 
@@ -233,3 +239,26 @@ input {
 .iwt{
       display:block;
     }
+
+ul.resource-buttons {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+ul.resource-buttons li {
+  display: inline;
+}
+
+.pagination {
+  margin: 0px 0 !important;
+}
+
+.list-group-item {
+  padding: 3px 15px !important;
+}
+
+.alert {
+  text-align: -webkit-center;
+}
