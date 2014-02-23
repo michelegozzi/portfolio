@@ -283,9 +283,16 @@ ul.resource-buttons li {
   @extend .col-xs-6;
 }
 
-.submit-layout {
-  @extend .col-xs-12;
+.cancel-layout {
+  @extend .col-xs-6;
   @extend .col-xs-offset-0;
+  @extend .col-lg-4;
+  @extend .col-lg-offset-0;
+} 
+
+.submit-layout {
+  @extend .col-xs-6;
+  @extend .col-xs-offset-6;
   @extend .col-lg-4;
   @extend .col-lg-offset-8;
 } 

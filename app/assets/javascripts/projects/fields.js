@@ -15,16 +15,23 @@ $(document).ready(function() {
 
 $.fn.toggleDropboxDialog=function()
 {
-  console.log(this);
+  //var input = this.siblings('input.resource-filepath-field');
+  var input = this.parents('tr').find('input[class*=resource-filepath-field]');
 
-  var input = this.siblings('input.resource-filepath-field');
+  if (input === undefined) {
+    console.error('esource-filepath-field input element not found!');
+  }
 
   options = {
 
   // Required. Called when a user selects an item in the Chooser.
     success: function(files) {
-        //alert("Here's the file link: " + files[0].link)
-        input.val(files[0].link);
+        //console.log("Here's the file link: " + files[0].link);
+
+        if (input !== undefined)
+          input.val(files[0].link);
+        else
+          console.error('resource-filepath-field input element is null!');
     },
 
     // Optional. Called when the user closes the dialog without selecting a file
