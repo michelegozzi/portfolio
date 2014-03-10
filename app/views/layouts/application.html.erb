@@ -19,34 +19,40 @@
 		<%= yield(:extrahead) %>
 	</head>
 	<body>
-    <div id="body">
 
-      <%= render 'layouts/header' %>
+    <%if current_page?(parallax_path) %>
+      <%= yield %>
+    <% else %>
 
-      <div class="container-fluid">
+      <div id="body">
 
-        <aside class="col-xm-0 col-lg-3">
-          <%= yield(:aside) %>
-        </aside>
+        <%= render 'layouts/header' %>
 
-  			<% flash.each do |key, value| %>
+        <div class="container-fluid">
+
+          <aside class="col-xm-0 col-lg-3">
+            <%= yield(:aside) %>
+          </aside>
+
+    			<% flash.each do |key, value| %>
+            <div class="row">
+              <div class="message-panel-layout">
+    				    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+              </div>
+            </div>
+    			<% end %>
           <div class="row">
-            <div class="message-panel-layout">
-  				    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+            <div class="page-layout">
+    			    <%= yield %>
             </div>
           </div>
-  			<% end %>
-        <div class="row">
-          <div class="page-layout">
-  			    <%= yield %>
-          </div>
         </div>
-      </div>
 
-      <%= debug(params) if Rails.env.development? %>
-		</div>
-    
-    <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
+  		</div>
+      
+      <%= render 'layouts/footer' %>
+    <% end %>
     
 	</body>
 </html>

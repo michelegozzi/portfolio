@@ -8,6 +8,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/michele/Dropbox/Projects/ror/FitTracker"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/michele/Dropbox/Projects/ror/OmniAuthTest01"
 		}
 	]
 }
