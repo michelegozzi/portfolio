@@ -110,9 +110,7 @@ namespace :user do |args|
     begin
       puts "USERS:"
 
-      @users = User.all
-
-      @users.each do |u|
+      User.all.each do |u|
         put u.name
         put u.email
         #put "* #{u.name} [email = #{u.email}]"
@@ -124,3 +122,4 @@ namespace :user do |args|
   end
   
 end
+
