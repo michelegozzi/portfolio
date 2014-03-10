@@ -17,9 +17,6 @@
 require 'dropbox_sdk'
 require 'securerandom'
 
-APP_KEY = "***REMOVED***"
-APP_SECRET = "***REMOVED***"
-
 class DropboxController < ApplicationController
 
     def main
@@ -70,7 +67,7 @@ class DropboxController < ApplicationController
 
     def get_web_auth()
         redirect_uri = url_for(:action => 'auth_finish')
-        DropboxOAuth2Flow.new(APP_KEY, APP_SECRET, redirect_uri, session, :dropbox_auth_csrf_token)
+        DropboxOAuth2Flow.new(ENV['DROPBOX_APP_KEY'], ENV['DROPBOX_APP_SECRET'], redirect_uri, session, :dropbox_auth_csrf_token)
     end
 
     def auth_start

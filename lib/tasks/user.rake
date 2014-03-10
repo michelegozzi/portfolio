@@ -61,7 +61,7 @@ namespace :user do |args|
     begin
   
     
-      usage = "USAGE: rake user:create usr=email pwd=newpassword"
+      usage = "USAGE: rake user:chpwd usr=email pwd=newpassword"
       
       usr = ENV['usr']
       pwd = ENV['pwd']
