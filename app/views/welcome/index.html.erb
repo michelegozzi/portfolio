@@ -1,0 +1,48 @@
+<% # include_javascript 'welcome/main.js' %>
+
+<% content_for :sitenavbarlinks do %>
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="#home">01. Projects</a></li>
+    <li><a href="#about">02. About</a></li>
+    <li><a href="#contact">03. Contact</a></li>
+  </ul>
+<% end %>
+
+<%= render 'layouts/site_navbar' %>
+
+<div id="home" class="full-panel">
+  <div id="cover">
+    <span>01. <%= link_to "Projects", "/home" %></span>
+  </div>  
+</div>
+
+<div class="welcome-container">
+  <div class="row">
+    <div class="col-md-12 full-panel about">
+      <div id="about" class="in-panel">
+        <h2>02. About</h2>
+        <p>
+        My name is Michele Gozzi and I'm a Software Developer with thirteen years of experience in software development. Highly skilled in specifications gathering, project design, reliable and scalable systems, troubleshooting, TDD, and Q/A testing.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-12 full-panel contact">
+      <div id="contact" class="in-panel">
+        <h2>03. Contact</h2>
+        <% if @contact_profiles.any? %>
+          <div>
+          <%= render 'shared/contact_list' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-12 full-panel footer">
+  </div>
+</div>
+<!-- /.container -->
+
+
+

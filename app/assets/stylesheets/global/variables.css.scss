@@ -1,0 +1,16 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$blue: #049cdb !default;
+$green: #46a546 !default;
+$red: #9d261d !default;
+$logoShadowColor: #000000 !default;
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}

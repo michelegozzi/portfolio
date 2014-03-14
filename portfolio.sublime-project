@@ -12,6 +12,18 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/michele/Dropbox/Projects/ror/OmniAuthTest01"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/michele/Dropbox/Projects/ror/BakeClub"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/michele/Dropbox/Projects/ror/RailsExample"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/michele/Dropbox/Projects/ror/gems"
 		}
 	]
 }

@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require ./jquery-ui-1.10.2/jquery-ui
+//= require google_analytics
 //= require_tree ./global

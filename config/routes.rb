@@ -1,6 +1,6 @@
 Portfolio::Application.routes.draw do
 
-  root :to => "static_pages#home"
+  root :to => "welcome#index"
 
   get  "dropbox/main"
   post "dropbox/upload"
@@ -27,6 +27,7 @@ Portfolio::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+  match '/home', to: 'static_pages#home'
   match '/contact', to: 'static_pages#contact'
   match '/parallax', to: 'static_pages#parallax'
   match '/parallax2', to: 'static_pages#parallax2'

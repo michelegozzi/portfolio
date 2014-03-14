@@ -1,0 +1,19 @@
+<div class="panel panel-primary">
+  <div class="panel-body">
+    Fell free to contact me by:
+  </div>
+
+  <ul class="list-group">
+    <% @contact_profiles.each do |cp| %>
+      <li class="list-group-item">
+        <i class="<%= cp.icon_class %> vertical-aligned-btn-content"></i><span class="vertical-aligned-btn-content">&nbsp;
+          <% if cp.profile_type == ContactProfile::TYPES[:email] %>
+            <%= mail_to cp.value, cp.name %>
+          <% else %>
+            <%= link_to cp.name, cp.value %>
+          <% end %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</div>
