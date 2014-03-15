@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "noreply@***REMOVED***-portfolio.herokuapp.com"
+  default from: ENV['PORTFOLIO_MAILER_DEFAULT_FROM']
 
   def contact_email(dispatch)
     @dispatch = dispatch
