@@ -1,0 +1,14 @@
+---
+defaults:
+  username: usr
+  password: pwd
+development:
+  username: usr
+  password: pwd
+  id: 2357
+test:
+  username: usr
+  password: pwd
+production:
+  username: usr
+  password: pwd
