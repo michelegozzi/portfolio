@@ -38,7 +38,7 @@ body,html {
 
 .in-panel h2 {
   margin-top:120px;
-  margin-bottom:150px;
+  margin-bottom:100px;
   text-transform: uppercase;
   font-weight:300;
   font-size:40px;
@@ -53,8 +53,8 @@ body,html {
   -webkit-column-count:2;
   column-count:2;*/
   margin-bottom:90px;
-  margin-right: 90px !important;
-  margin-left: 90px !important;
+  margin-right: 90px;
+  margin-left: 90px;
   padding: 50px !important;
   background: lightsteelblue;
   opacity: 0.8;
@@ -63,7 +63,8 @@ body,html {
 
 strong {
   font-size: 24px;
-  font-weight: 300
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 cite a{
@@ -81,11 +82,36 @@ cite a{
 }
 
 .footer p {
-  font-size:100px;
+  
   font-weight: 50;
   color:#00ebbe;
-  text-align: center;
+  padding: 10px;
 }
+
+.footer > div:first-child {
+  position: absolute;
+  left: 200px;
+  width: auto;
+  top: 30px;
+}
+
+.footer > div:first-child > p {
+
+}
+
+.footer > div:last-child {
+  position: absolute;
+  right: 200px;
+  width: 100%;
+  bottom: 30px;
+  
+}
+
+.footer > div:last-child > p {
+  text-align: right;
+}
+
+
 
 #home {
   background: url(csharp.png) no-repeat 50% 0 fixed;
@@ -105,7 +131,7 @@ cite a{
   position: absolute;
   bottom: 50%;
   left:50%;
-  font-size: 90px;
+  font-size: 80px;
   font-weight: 300;
   text-transform: uppercase;
   margin-left:-485px;
@@ -123,15 +149,27 @@ cite a{
 }
 .about h2 {color:#000; background: lightskyblue;padding:10px 15px;opacity: 0.8}
 
-.contact {
+.skills {
   background: url(t-sql.png) no-repeat 50% 0 fixed;
-  height: 640px;
+  height: 840px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-.contact h2 {color:#000; background: #fff;padding:10px 15px;opacity: 0.8}
+#skills h2 {
+  color:#000;
+  background: #fff;
+  padding:10px 15px;
+  opacity: 0.8;
+  margin-bottom: 50px !important;
+}
+
+#skills p {
+  margin-bottom:10px;
+  padding: 20px !important;
+}
+
 
 @media (max-width: 992px) {
 
@@ -157,4 +195,51 @@ cite a{
   .in-panel h2{margin-top:70px;}
   .in-panel p {font-size: 14px;-moz-column-count:1;-webkit-column-count:1;column-count:1;}
   .footer p{font-size:30px;}
+
+  .footer > div:first-child {
+    position: absolute;
+    left: 20px;
+    width: auto;
+    top: 30px;
+  }
+
+  .footer > div:first-child > p {
+
+  }
+
+  .footer > div:last-child {
+    position: absolute;
+    left: 20px;
+    right: 0px;
+    width: auto;
+    bottom: 30px;
+    
+  }
+
+  .footer > div:last-child > p {
+    text-align: left;
+  }
+}
+
+#custom-tweet-button a {
+  display: block;
+  padding: 2px 5px 2px 20px;
+  background: url(twitter_logo_blue.png) 1px center no-repeat;
+  border: 1px solid #ccc;
+}
+
+
+
+
+.twitter-button {
+  color: white;
+  font-weight:300;
+  font-size: $twitter-text-size;
+}
+
+.twitter-button > a > img {
+  height: $twitter-button-size;
+  width: $twitter-button-size;
+  margin-right: $twitter-button-margin;
+  margin-left: $twitter-button-margin;
 }

@@ -4,7 +4,7 @@
   <ul class="nav navbar-nav">
     <li class="active"><a href="#home">01. Projects</a></li>
     <li><a href="#about">02. About</a></li>
-    <li><a href="#contact">03. Contact</a></li>
+    <li><a href="#skills">03. Skills</a></li>
   </ul>
 <% end %>
 
@@ -12,7 +12,7 @@
 
 <div id="home" class="full-panel">
   <div id="cover">
-    <span>01. <%= link_to "Projects", "/home" %></span>
+    <span>01. see my <%= link_to "Projects", "/home" %></span>
   </div>  
 </div>
 
@@ -27,19 +27,37 @@
       </div>
     </div>
 
-    <div class="col-md-12 full-panel contact">
-      <div id="contact" class="in-panel">
-        <h2>03. Contact</h2>
-        <% if @contact_profiles.any? %>
-          <div>
-          <%= render 'shared/contact_list' %>
-          </div>
-        <% end %>
+    <div class="col-md-12 full-panel skills">
+      <div id="skills" class="in-panel">
+        <h2>03. Skills</h2>
+        <p>
+        <strong>Technologies:</strong>C# (2.0/3.5/4.0/4.5), Java SE/EE (1.6), C/C++, Html5/Css3, .NET (ASP.NET Web Forms, Web Services, MVC2/3/4, Windows Services, WindowsForms, WCF, WPF, Win CE), Telerik, JSP, Linq, jQuery, JavaScript, AJAX, XML/Xpath, XSLT, Json, Twitter Bootstrap, REST, Ruby on Rails, Ruby, LESS, T-SQL, PL/SQL
+        </p>
+        <p>
+        <strong>Software:</strong> MS Visual Studio 2008/2010/2012, IIS6/7, Apache, Tomcat, Eclipse, Subversion, Git, TFS, Nagios, nsclient++, Mantis Bug Tracker, MediaWiki, MS Project, NUnit, MSTest, WatiN, msbuild, NANT, Photoshop, SharePoint, SharePoint Designer, Mirth Connect, RabbitMQ, JMS and ActiveMQ (just for a case study with RabbitMQ)
+        </p>
+        <p>
+        <strong>Databases:</strong> SQL Server 2005/2008, Oracle 11g, PostgreSQL, SQLite, Cassandra (product evaluation)
+        </p>
+        <p>
+        <strong>Platforms:</strong> Windows Vista/7/XP/Server 2003/2008, Linux (Debian based and RHEL5/6), VMware, FreeNAS
+        </p>
       </div>
     </div>
 
   </div>
   <div class="col-md-12 full-panel footer">
+    <div>
+      <p>
+        <span class="twitter-button">Don't hesitate &amp; <%= link_to "contact me", "/contactme" %></span>
+      </p>
+    </div>
+
+    <div>
+      <p>
+        <span class="twitter-button">... or you can <%= link_to "#{image_tag('twitter_logo_blue.png')}@send_me_a_twitter!".html_safe, @twitter_url %></span>
+      </p>
+    </div>
   </div>
 </div>
 <!-- /.container -->

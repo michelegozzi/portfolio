@@ -1,0 +1,29 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class="row">
+  <div class="content-layout">
+
+    
+
+    <div class="form-group">
+      <%= f.label :from, placeholder: "Put your email here..." %>
+      <%= f.text_field :from, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name, placeholder: "Put your name here..." %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :message, placeholder: "Put your message here..." %>
+      <%= f.text_area :message, :rows => "5", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Send", class: "btn btn-large btn-primary submit-layout" %>
+    </div>
+  </div>
+</div>
+
+<%= debug(f.object) if Rails.env.development? %>

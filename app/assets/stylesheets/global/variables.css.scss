@@ -14,3 +14,7 @@ $grayMediumLight: #eaeaea;
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+
+$twitter-text-size: 32px;
+$twitter-button-size: $twitter-text-size + $twitter-text-size * 0.1;
+$twitter-button-margin: $twitter-button-size * 0.1;

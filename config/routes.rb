@@ -15,6 +15,7 @@ Portfolio::Application.routes.draw do
     end
   end
 
+  resources :dispatches, only: [:new, :create]
   resources :resources, only: [:show]
   resources :contact_profiles
   resources :sectors
@@ -31,6 +32,7 @@ Portfolio::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/parallax', to: 'static_pages#parallax'
   match '/parallax2', to: 'static_pages#parallax2'
+  match '/contactme', to: 'dispatches#new'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
