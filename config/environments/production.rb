@@ -70,9 +70,9 @@ Portfolio::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: '***REMOVED***-portfolio.herokuapp.com',
+    address: ENV['PORTFOLIO_SMTP_ADDRESS'],
+    port: ENV['PORTFOLIO_SMTP_PORT'],
+    domain: ENV['PORTFOLIO_SMTP_DOMAIN'],
     user_name: ENV['PORTFOLIO_SMTP_USR'],
     password: ENV['PORTFOLIO_SMTP_PWD'],
     authentication: 'plain',
