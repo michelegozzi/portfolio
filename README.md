@@ -1,4 +1,4 @@
-Pportfolio
+Portfolio
 =========
 
 == Deployment Heroku
