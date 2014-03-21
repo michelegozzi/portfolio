@@ -26,6 +26,9 @@ group :development, :test do
   #gem 'guard-spork', '1.2.0'
   #gem 'spork', '0.9.2'
   gem 'annotate', '2.5.0'
+  gem 'guard-test'
+  gem 'guard-spork'
+  gem 'spork-testunit'
 end
 
 
@@ -43,12 +46,19 @@ group :assets do
 end
 
 group :test do
-  gem 'capybara', '1.1.2'
-  gem 'rb-inotify', '0.8.8'
-  gem 'libnotify', '0.5.9'
+  gem 'capybara', '~> 2.1.0'
+  #gem 'rb-inotify', '0.8.8'
+  #gem 'libnotify', '0.5.9'
   gem 'factory_girl_rails', '4.1.0'
-  gem 'database_cleaner', '0.7.0'
+  gem 'database_cleaner', '1.2.0'
   gem 'cucumber-rails', '1.2.1', :require => false
+  gem 'rspec-expectations'
+  gem 'poltergeist', ">= 1.4.0"
+  gem 'selenium-webdriver'
+  gem 'launchy'
+  gem 'rest-client'
+  gem 'rb-inotify', '~> 0.9'
+  gem 'ruby-prof'
 end
 
 group :production do

@@ -6,10 +6,4 @@ class StaticPagesController < ApplicationController
   def contact
     @contact_profiles = ContactProfile.order("priority asc").all
   end
-
-  def parallax
-  end
-
-  def parallax2
-  end
 end

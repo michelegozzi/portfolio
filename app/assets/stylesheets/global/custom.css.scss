@@ -48,6 +48,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  text-shadow: 2px 1px 3px $gray;
 }
 
 h2 {
@@ -261,33 +262,10 @@ ul.resource-buttons li {
   @extend .col-lg-offset-2;
 }
 
-/* parallax scrolling */
-
-#projects { 
-  background: url(projects.jpg) 50% 0 no-repeat fixed; 
-  height: 1000px;  
-  margin: 0 auto; 
-  width: 100%; 
-  max-width: 1920px; 
-  position: relative; 
-  box-shadow: 0 0 50px rgba(0,0,0,0.8);
-}
-#contact { 
-  background: url(contact.jpg) 50% 0 no-repeat fixed; 
-  height: 1000px;
-  margin: 0 auto; 
-  width: 100%; 
-  max-width: 1920px; 
-  position: relative; 
-  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+.tab-content {
+  background-color: $semiTransparentBackground;
 }
 
-/* Introduction */
-
-#projects article { background: url(projects_article.png) no-repeat scroll center top transparent; height: 458px; position: absolute; text-indent: -9999px; top: 291px; width: 100%; }
-
-#projects h1, #projects p { z-index: 10; }
-
-#contact article { background: url(contact_article.png) no-repeat scroll center top transparent; height: 458px; position: absolute; text-indent: -9999px; top: 291px; width: 100%; }
-
-#contact h1, #contact p { z-index: 10; }
+.page-layout ul.nav {
+  background-color: $semiTransparentBackground;
+}

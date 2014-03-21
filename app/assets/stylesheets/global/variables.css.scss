@@ -9,6 +9,8 @@ $logoShadowColor: #000000 !default;
 
 $grayMediumLight: #eaeaea;
 
+$semiTransparentBackground: rgba(255,255,255,0.65);
+
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
