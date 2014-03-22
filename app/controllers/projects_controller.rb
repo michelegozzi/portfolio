@@ -3,6 +3,13 @@ class ProjectsController < ApplicationController
 
   before_filter :signed_user
 
+  after_filter :store_prev_location_and_anchor, only: [:edit]
+
+  def save_my_previous_url
+    # session[:previous_url] is a Rails built-in variable to save last url.
+    session[:my_previouse_url] = URI(request.referer).path
+  end
+
   def index
     @projects = Project.includes(:sector).order("#{sort_column} #{sort_direction}").paginate(page: params[:page], :per_page => 5)
   end
@@ -27,7 +34,7 @@ class ProjectsController < ApplicationController
     
     if @project.update_attributes(params[:project])
       flash[:success] = "Project updated"
-      redirect_to projects_path # @project
+      redirect_back_or projects_path # @project
     else
       render 'edit', params[:project]
     end
@@ -67,5 +74,9 @@ class ProjectsController < ApplicationController
 
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+
+    def store_prev_location_and_anchor
+      store_prev_location(params[:id])
     end
 end
