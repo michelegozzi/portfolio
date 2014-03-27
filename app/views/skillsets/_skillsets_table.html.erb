@@ -1,0 +1,38 @@
+<% include_javascript 'skillsets/skillsets_table.js' %>
+
+<table id="skillsets_table" class="table-layout">
+  <thead>
+    <tr>
+      <th><%= sortable "name", "Name" %></th>
+      <th>
+        <ul class="table-buttons">
+          <li>
+            <%= link_to bs3glyphincon('plus'), new_skillset_path %>
+          </li>
+        </ul>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @skillsets.each do |skillset| %>
+
+    <tr>
+      <td class="name clickable">
+        <%= skillset.name %>
+      </td>
+      <td>
+        <ul class="table-buttons">
+          <li>
+            <%= link_to bs3glyphincon('trash'), skillset_path(skillset), method: :delete, data: { confirm: "Are you sure?" } %>
+          </li>
+        </ul>
+      </td>
+      
+      <input type="hidden" name="id" value="<%= skillset.id %>" />
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @skillsets %>

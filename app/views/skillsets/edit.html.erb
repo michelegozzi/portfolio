@@ -1,0 +1,23 @@
+<% provide(:title, "Edit Skillset") %>
+
+<div class="row">
+  <div class="breadcrumb-layout">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "Back", :back %>
+        <span class="divider"></span>
+      </li>
+      <li>
+        <%= link_to "New", new_skillset_path %>
+        <span class="divider"></span>
+      </li>
+      <li>
+        <%= link_to "Delete", @skillset, method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for @skillset do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>

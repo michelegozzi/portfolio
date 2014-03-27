@@ -43,6 +43,14 @@ module ApplicationHelper
     link_to_add_fields(inner_text, f, association, new_object)
   end
 
+  # Creates a link tag that renders the form fields elements for the nested Skill model
+  # Example:
+  #   <%= link_to_add_skill_fields '<i class="icon-plus icon-white"></i>'.html_safe, f, :activities, category_id %>
+  def link_to_add_skill_fields(inner_text, f, association = :skills)
+    new_object = f.object.class.reflect_on_association(association).klass.new
+    link_to_add_fields(inner_text, f, association, new_object)
+  end
+
   # Creates a link tag that renders the form fields elements for nested models
   def link_to_add_fields(inner_text, f, association, new_object)
     fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|

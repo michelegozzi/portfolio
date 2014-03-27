@@ -31,8 +31,12 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select 'title', full_title('Michele Gozzi - Portfolio')
   end
 
+  test "should report a warning if no projects or sectors are available." do
+    get :home
+    assert_select "div.alert-warning", "No projects or sectors are available."
+  end
 
-  test "should have a tab for each project" do
+  test "should have a tab for each sector" do
 
     initialize_sectors
 

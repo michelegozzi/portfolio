@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+
+  after_filter :store_prev_location, only: [:new]
+  before_filter :store_prev_location, only: [:destroy]
+
   def new
   end
 
@@ -17,6 +21,14 @@ class SessionsController < ApplicationController
   def destroy
     logger.info "destroy"
     sign_out
-    redirect_to root_url
+    redirect_back_or root_url
   end
+
+  private
+
+    def store_prev_location_before_sign_in
+      logger.debug "call store_prev_location_before_sign_in"
+      #debugger
+      store_prev_location(nil)
+    end
 end

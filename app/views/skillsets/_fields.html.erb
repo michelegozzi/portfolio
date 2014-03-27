@@ -1,0 +1,48 @@
+<%= render 'shared/error_messages', object: f.object %>
+<% # include_javascript 'skillsets/fields.js' %>
+<% include_javascript 'skillsets/skills.js' %>
+
+<div class="row">
+  <div class="content-layout">
+    <div class="form-group">
+      <%= f.label :name, placeholder: "Put your contact skillset display name here..." %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label 'Skills' %>
+      <div class="table-responsive">
+        <table class="table-layout">
+          <thead>
+            <tr>
+              <th class="col-xs-10">Skill Name</th>
+              <th class="col-xs-2">
+                <ul class="table-buttons">
+                  <li>
+                    <%= link_to_add_skill_fields '<span class="glyphicon glyphicon-plus"></span>'.html_safe, f, :skills %>
+                  </li>
+                </ul>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= f.fields_for :skills, @skillset.skills do |skill_fields| %>
+              <%= render :partial => 'skill_fields', :locals => { :f => skill_fields } %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.submit params[:action]=="edit" ? "Save changes" : "Save", class: "btn btn-large btn-primary submit-layout" %>
+    </div>
+
+
+
+  </div>
+</div>
+
+<%= debug(f.object) if Rails.env.development? %>
+

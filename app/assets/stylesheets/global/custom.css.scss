@@ -184,14 +184,14 @@ input {
       display:block;
     }
 
-ul.resource-buttons {
+ul.resource-buttons, ul.table-buttons {
   margin: 0;
   padding: 0;
   list-style-type: none;
   text-align: center;
 }
 
-ul.resource-buttons li {
+ul.resource-buttons li, , ul.table-buttons li {
   display: inline;
 }
 

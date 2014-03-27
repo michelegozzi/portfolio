@@ -18,6 +18,8 @@ Portfolio::Application.routes.draw do
   resources :dispatches, only: [:new, :create]
   resources :resources, only: [:show]
   resources :contact_profiles
+  #resources :skills, only: [:show]
+  resources :skillsets
   resources :sectors
   resources :projects do
     collection do

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_filter :correct_user, only: [:edit, :update]
   #before_filter :admin_user, only: [:index, :destroy]
   before_filter :avoided_to_signed_in_user, only: [:new]
-  
+
   #def index
     #@users = User.paginate(page: params[:page], :per_page => 10)
   #end
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
   private
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
+      redirect_to(home_path) unless current_user?(@user)
     end
 
     #def admin_user
@@ -78,4 +78,5 @@ class UsersController < ApplicationController
     def avoided_to_signed_in_user
       redirect_to(root_path) unless !signed_in?
     end
+
 end

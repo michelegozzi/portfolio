@@ -1,0 +1,15 @@
+<% provide(:title, "New Skillset") %>
+
+<div class="row">
+  <div class="breadcrumb-layout">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "Back", :back %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for @skillset do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>
