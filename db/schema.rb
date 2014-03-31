@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140326220651) do
+ActiveRecord::Schema.define(:version => 20140331035522) do
 
   create_table "contact_profiles", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(:version => 20140326220651) do
   end
 
   create_table "dispatches", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "personal_details", :force => true do |t|
+    t.string   "about"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -78,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20140326220651) do
   end
 
   add_index "skills", ["name"], :name => "index_skills_on_name"
+  add_index "skills", ["skillset_id", "name"], :name => "index_skills_on_skillset_id_and_name", :unique => true
 
   create_table "skillsets", :force => true do |t|
     t.string   "name"

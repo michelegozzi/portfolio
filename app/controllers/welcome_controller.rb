@@ -16,6 +16,8 @@ class WelcomeController < ApplicationController
 
     #@contact_profiles = ContactProfile.order("priority asc").all
 
+    @personal_detail = PersonalDetail.first
+
     @skillsets = Skillset.order("id asc").all
 
     render layout: "welcome"

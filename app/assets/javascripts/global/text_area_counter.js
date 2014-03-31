@@ -1,0 +1,35 @@
+function taLimit(taObj,maxL) {
+  if (taObj.val().length==maxL) return false;
+  return true;
+}
+
+function taCount(taObj,Cnt,maxL) { 
+  var objCnt = $('#'+Cnt);
+  var objVal = taObj.val();
+  
+  if (objVal.length > maxL) objVal = objVal.substring(0, maxL);
+  if (objCnt) {
+    objCnt.text(maxL-objVal.length);
+  }
+  return true;
+}
+
+$(document).ready(function(){
+  $('.text-area-counter').each(function() {
+    //console.log('text-area-counter');
+    var $ta = $(this);
+    var target = $ta.attr('data_target');
+    //console.log( "data_target: " + target );
+    var maxL = $ta.attr('data_max_length');
+    //console.log( "data_max_length: " + maxL );
+    taCount($ta,target,maxL);
+    $ta.keypress(function() {
+      //console.log( "Handler for .keypress() called." );
+      return taLimit($ta,maxL);
+    });
+    $ta.keyup(function() {
+      //console.log( "Handler for .keyup() called." );
+      taCount($ta,target,maxL);
+    });
+  });
+});

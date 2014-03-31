@@ -8,9 +8,12 @@ class Project < ActiveRecord::Base
 
   belongs_to :sector
 
+  DESCRIPTION_MAXIMUM_LENGTH = 255
+  URL_MAXIMUM_LENGTH = 255
+
   validates :name, presence: true, length: { maximum: 50 }
-  validates :description, presence: true, length: { maximum: 255 }
-  validates :url, length: { maximum: 255 }
+  validates :description, presence: true, length: { maximum: DESCRIPTION_MAXIMUM_LENGTH }
+  validates :url, length: { maximum: URL_MAXIMUM_LENGTH }
   validates :sector_id, presence: true
 
   def create_uuid

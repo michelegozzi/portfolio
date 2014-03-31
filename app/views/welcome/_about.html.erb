@@ -1,0 +1,12 @@
+<div class="col-md-12 full-panel about">
+  <div id="about" class="in-panel">
+    <h2>02. About</h2>
+    <p>
+    <% if @personal_detail.nil? %>
+      N/A
+    <% else %>
+      <%= @personal_detail.about %>
+    <% end %>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<% provide(:title, "Edit Personal Detail") %>
+
+<div class="row">
+  <div class="breadcrumb-layout">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to "Back", :back %>
+        <span class="divider"></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for @personal_detail do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>

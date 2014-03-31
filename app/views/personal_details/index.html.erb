@@ -1,0 +1,33 @@
+<% provide(:title, "Personal Detail Manager") %>
+<h1>Personal Detail Manager</h1>
+
+<div class="row">
+  <div class="breadcrumb-layout">
+    <ul class="breadcrumb">
+      <li>
+        <% if @personal_detail.nil? %>
+          <%= link_to "New", new_personal_detail_path %>
+        <% else %>
+          <%= link_to "Edit", edit_personal_detail_path(@personal_detail) %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="content-layout">
+
+    <% if !@personal_detail.nil? %>
+      <div class="panel panel-default">
+        <div class="panel-heading">About</div>
+        <div class="panel-body">
+          <%= @personal_detail.about %>
+        </div>
+      </div>
+
+
+    <% end %>
+
+  </div>
+</div>

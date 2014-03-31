@@ -10,10 +10,12 @@ class Dispatch
 
   attr_accessible :from, :name, :message
   
+  MESSAGE_MAXIMUM_LENGTH = 255
+
   validates :name, presence: true, length: { minimum: 4, maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :from, presence: true, format: { with: VALID_EMAIL_REGEX }
-  validates :message, presence: true, length: { minimum: 8, maximum: 255 }
+  validates :message, presence: true, length: { minimum: 8, maximum: MESSAGE_MAXIMUM_LENGTH }
   
   
   def initialize(attributes = {})

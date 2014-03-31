@@ -1,0 +1,7 @@
+rake skillset:addskills name=Technologies skills="C# (2.0/3.5/4.0/4.5), Java SE/EE (1.6), C/C++, Html5/Css3, ASP.NET Web Forms, ASP.NET Web Services, ASP.NET MVC2/3/4, .NET Windows Services, .NET WindowsForms, WCF, WPF, Win CE, Telerik, JSP, Linq, jQuery, JavaScript, AJAX, XML/Xpath, XSLT, Json, Twitter Bootstrap, REST, Ruby on Rails, Ruby, LESS, T-SQL, PL/SQL"
+
+rake skillset:addskills name=Software skills="MS Visual Studio 2008/2010/2012, IIS6/7, Apache, Tomcat, Eclipse, Subversion, Git, TFS, SQL Server Management Studio, SQL Profiler, SSRS, Performance Monitor, Nagios, nsclient++, Mantis Bug Tracker, MediaWiki, MS Project, NUnit, MSTest, WatiN, msbuild, NANT, Photoshop, SharePoint, SharePoint Designer, Mirth Connect, RabbitMQ, JMS (case study), ActiveMQ (case study)"
+
+rake skillset:addskills name=Databases skills="SQL Server 2005/2008, Oracle 11g, PostgreSQL, SQLite, Cassandra (product evaluation)"
+
+rake skillset:addskills name=Platforms skills="Windows Vista/7/XP/Server 2003/2008, Linux (Debian based and RHEL5/6), VMware, FreeNAS"

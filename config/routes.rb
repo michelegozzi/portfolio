@@ -15,6 +15,20 @@ Portfolio::Application.routes.draw do
     end
   end
 
+  match '/personal_information', to: 'personal_information#index'
+  match '/update_personal_information', to: 'personal_information#update', via: :put
+  match '/edit_personal_information',  to: 'personal_information#edit'
+  match '/create_personal_information',  to: 'personal_information#create', via: :post
+  match '/new_personal_information',   to: 'personal_information#new'
+#personal_information_index GET    /personal_information(.:format)          personal_information#index
+ #                          POST   /personal_information(.:format)          personal_information#create
+  
+ #edit_personal_information GET    /personal_information/:id/edit(.:format) personal_information#edit
+ #     personal_information GET    /personal_information/:id(.:format)      personal_information#show
+ #                          PUT    /personal_information/:id(.:format)      personal_information#update
+ #                          DELETE /personal_information/:id(.:format)      personal_information#destroy
+
+  resources :personal_details, only: [:index, :new, :create, :edit, :update]
   resources :dispatches, only: [:new, :create]
   resources :resources, only: [:show]
   resources :contact_profiles
