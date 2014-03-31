@@ -5,3 +5,12 @@ rake skillset:addskills name=Software skills="MS Visual Studio 2008/2010/2012, I
 rake skillset:addskills name=Databases skills="SQL Server 2005/2008, Oracle 11g, PostgreSQL, SQLite, Cassandra (product evaluation)"
 
 rake skillset:addskills name=Platforms skills="Windows Vista/7/XP/Server 2003/2008, Linux (Debian based and RHEL5/6), VMware, FreeNAS"
+
+
+heroku run rake skillset:addskills name=Technologies skills=C#2.0/3.5/4.0/4.5,JavaSE/EE1.6,C/C++,Html5/Css3,ASP.NETWebForms,ASP.NETWebServices,ASP.NETMVC2/3/4,.NETWindowsServices,.NETWindowsForms,WCF,WPF,WinCE,Telerik,JSP,Linq,jQuery,JavaScript,AJAX,XML/Xpath,XSLT,Json,TwitterBootstrap,REST,RubyonRails,Ruby,LESS,T-SQL,PL/SQL
+
+heroku run rake skillset:addskills name=Software skills=MSVisualStudio2008/2010/2012,IIS6/7,Apache,Tomcat,Eclipse,Subversion,Git,TFS,SQLServerManagementStudio,SQLProfiler,SSRS,PerformanceMonitor,Nagios,nsclient++,MantisBugTracker,MediaWiki,MSProject,NUnit,MSTest,WatiN,msbuild,NANT,Photoshop,SharePoint,SharePointDesigner,MirthConnect,RabbitMQ,JMScasestudy,ActiveMQcasestudy
+
+heroku run rake skillset:addskills name=Databases skills=SQLServer2005/2008,Oracle11g,PostgreSQL,SQLite,Cassandraproductevaluation
+
+heroku run rake skillset:addskills name=Platforms skills=WindowsVista/7/XP/Server2003/2008,LinuxDebianbasedandRHEL5/6,VMware,FreeNAS
