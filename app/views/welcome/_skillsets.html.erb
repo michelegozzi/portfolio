@@ -11,7 +11,7 @@
   <div class="carousel-inner">
     <% @skillsets.each_with_index do |skillset, index| %>
 
-      <div class="item <%= index==0 ? 'active' : '' %>" style="height: 200px">
+      <div class="item <%= index==0 ? 'active' : '' %>">
         <%= render 'skillset', object: skillset %>
       </div>
     <% end %>

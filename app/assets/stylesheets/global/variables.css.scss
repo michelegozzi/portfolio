@@ -5,10 +5,7 @@
 $blue: #049cdb !default;
 $green: #46a546 !default;
 $red: #9d261d !default;
-$logoShadowColor: #000000 !default;
-
 $grayMediumLight: #eaeaea;
-
 $semiTransparentBackground: rgba(255,255,255,0.65);
 
 @mixin box_sizing {
@@ -17,10 +14,44 @@ $semiTransparentBackground: rgba(255,255,255,0.65);
   box-sizing: border-box;
 }
 
+/* twitter custom button */
 $twitter-text-size: 32px;
 $twitter-button-size: $twitter-text-size + $twitter-text-size * 0.1;
 $twitter-button-margin: $twitter-button-size * 0.1;
 
-$twitter-text-size-small: 22px;
+$twitter-text-size-small: 18px;
 $twitter-button-size-small: $twitter-text-size-small + $twitter-text-size-small * 0.1;
 $twitter-button-margin-small: $twitter-button-size-small * 0.1;
+
+/* logo */
+$logoFontSizeBig: 6.0em;
+$logoFontSizeMedium: 2.5em;
+$logoFontSizeSmall: 1.7em;
+
+$logoPaddingTopBig: 20px;
+$logoPaddingTopMedium: auto;
+$logoPaddingTopSmall: 9px;
+
+$logoShadowColor: #000000 !default;
+
+/* cover */
+$coverFontSizeBig: 80px;
+$coverFontSizeMedium: 22px;
+
+/* home */
+$homeHeightBig: 640px;
+$homeHeightMedium: 480px;
+$homeBackgroundUrl: "csharp.png";
+
+/* about */
+$aboutHeightBig: 640px;
+$aboutHeightMedium: 480px;
+$aboutBackgroundUrl: "rails.png";
+
+/* skills */
+$skillsHeightBig: 640px;
+$skillsHeightMedium: 640px;
+$skillsBackgroundUrl: "t-sql.png";
+
+$skillsetContainerBig: 200px;
+$skillsetContainerMedium: 350px;
