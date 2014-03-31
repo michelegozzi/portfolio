@@ -170,57 +170,6 @@ cite a{
   padding: 20px !important;
 }
 
-
-@media (max-width: 992px) {
-
-  .navbar-fixed-top {
-    width:100%;
-    margin: 0
-  }
-
-  #join { height:320px }
-  
-  #cover {
-    position: absolute;
-    bottom: 20%;
-    left:0%;
-    font-size: 30px;
-    font-weight: 300;
-    margin-left: 0;
-    margin-bottom:0;
-    width:100%;
-  }
-  
-  .in-panel{width:90%; margin-right:5%}
-  .in-panel h2{margin-top:70px;}
-  .in-panel p {font-size: 14px;-moz-column-count:1;-webkit-column-count:1;column-count:1;}
-  .footer p{font-size:30px;}
-
-  .footer > div:first-child {
-    position: absolute;
-    left: 20px;
-    width: auto;
-    top: 30px;
-  }
-
-  .footer > div:first-child > p {
-
-  }
-
-  .footer > div:last-child {
-    position: absolute;
-    left: 20px;
-    right: 0px;
-    width: auto;
-    bottom: 30px;
-    
-  }
-
-  .footer > div:last-child > p {
-    text-align: left;
-  }
-}
-
 #custom-tweet-button a {
   display: block;
   padding: 2px 5px 2px 20px;
@@ -246,4 +195,87 @@ cite a{
     background-image: none;
     background-repeat: no-repeat;
     filter: none;
+}
+
+@media (max-width: 992px) {
+
+  .navbar-fixed-top {
+    width:100%;
+    margin: 0
+  }
+
+  #logo {
+    text-shadow: 2px 2px 3px $logoShadowColor;
+    font-size: 3em;
+    padding-top: 15px;
+  }
+
+  #join { height:320px }
+  
+  #cover {
+    position: absolute;
+    bottom: 20%;
+    left:0%;
+    font-size: 30px;
+    font-weight: 300;
+    margin-left: 0;
+    margin-bottom:0;
+    width:100%;
+  }
+  
+  .in-panel{width:90%; margin-right:5%}
+  .in-panel h2{margin-top:70px;}
+  .in-panel p {
+    font-size: 14px;
+    -moz-column-count:1;
+    -webkit-column-count:1;
+    column-count:1;
+  }
+
+  .in-panel > p, .in-panel > div {
+    margin-bottom:10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px !important;
+    background: lightsteelblue;
+    opacity: 0.8;
+    translateX: 50px
+  }
+
+  .footer p{font-size:10px;}
+
+  .footer > div:first-child {
+    position: absolute;
+    left: 20px;
+    width: auto;
+    top: 30px;
+  }
+
+  .footer > div:first-child > p {
+
+  }
+
+  .footer > div:last-child {
+    position: absolute;
+    left: 20px;
+    right: 0px;
+    width: auto;
+    bottom: 30px;
+    
+  }
+
+  .footer > div:last-child > p {
+    text-align: left;
+  }
+
+  .twitter-button {
+    font-size: $twitter-text-size-small;
+  }
+
+  .twitter-button > a > img {
+    height: $twitter-button-size-small;
+    width: $twitter-button-size-small;
+    margin-right: $twitter-button-margin-small;
+    margin-left: $twitter-button-margin-small;
+  }
 }
